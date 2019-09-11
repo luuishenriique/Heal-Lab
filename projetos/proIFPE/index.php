@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>proIFPE - Campus Igarassu</title>
+	<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 	<h1><?php echo "Projeto de proposta para o ProIFPE"; ?></h1>
