@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>proIFPE</title>
+	<title>proIFPE - Campus Igarassu</title>
 </head>
 <body>
 	<h1><?php echo "Projeto de proposta para o ProIFPE"; ?></h1>
