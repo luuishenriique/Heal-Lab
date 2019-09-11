@@ -1,0 +1,9 @@
+	body {
+		background-image: url("IFPE_Pronatec_.jpg");
+		background-size: contain;
+	}
+	h1, h2 {
+		text-align: center;
+		color: white;
+		background-color: green;
+	}
