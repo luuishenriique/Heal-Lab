@@ -12,7 +12,7 @@
 	<p><?php echo "Cadeira - Projeto e prática I" ?></p>
 	<p><?php echo "Docente - Alexandre Strapação Guedes Vianna" ?></p>
 	<br>
-	<p><?php echo "este projeto está aos encargos de nosso grupo (Heal-Lab) e tem como responsabilidade desenvolver um sistema voltado para o proIFPE, contribuindo para melhorias para esta modalidade de ensino e tentará trazer alguns conceitos de utilização como: "; ?></p>
+	<p><?php echo "Este projeto está aos encargos de nosso grupo (Heal-Lab) e tem como responsabilidade desenvolver um sistema voltado para o proIFPE, contribuindo para melhorias para esta modalidade de ensino e tentará trazer alguns conceitos de utilização como: "; ?></p>
 	<br>
 	<ul>
 		<li><?php echo "Matrículas de alunos por disciplinas ofertadas" ?></li>
@@ -22,9 +22,11 @@
 	</ul>
 	<br>
 	<p><?php echo "Podendo obter mais funcionalidades durante o processo de desenvolvimento." ?></p>
+	<p><?php echo "O projeto tem como objetivo principal, criar um site que compute as faltas e notas de todos os alunos do PROIFPE." ?></p>
+	<p><?php echo "A nossa expectativa é que esse site funcione em nossa instituição." ?></p>
 	<br>
 
-	<a rel="stylesheet" href="sobre.php">Sobre</a> 
+	<a rel="stylesheet" href="Sobre.php">Sobre</a> 
 	
 </body>
 </html>
