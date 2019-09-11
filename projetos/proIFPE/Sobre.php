@@ -43,7 +43,7 @@
 
 		<tr>
 					<td>Maria Conceição</td>
-					<td></td>
+					<td>maria4682@gmail.com</td>
 					<td>https://github.com/MARIA617</td>
 		</tr>
 
