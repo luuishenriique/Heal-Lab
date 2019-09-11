@@ -23,7 +23,7 @@
 	<br>
 	<p><?php echo "Podendo obter mais funcionalidades durante o processo de desenvolvimento." ?></p>
 	<br>
-	<h2><?php echo "Sobre o desenvolvimento" ?></h2>
+	<h2><?php echo "Sobre a equipe de desenvolvimento" ?></h2>
 	<br>
 	<p><?php echo "O grupo de desenvolvimento responsável por desenvolver este projeto tem os seguintes integrantes:" ?></p>
 	<br>
