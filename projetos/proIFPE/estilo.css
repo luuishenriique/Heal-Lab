@@ -1,6 +1,9 @@
 	body {
 		background-image: url("IFPE_Pronatec_.jpg");
 		background-size: contain;
+        /*width: 1500px;*/
+        margin: 0 auto;
+}
 	}
 	table, th, td{
 			border-collapse: collapse;
@@ -12,6 +15,34 @@
 		}
 	h1, h2 {
 		text-align: center;
-		color: white;
-		background-color: green;
+		color: black;
+		/*background-color: green;*/
 	}
+    .header{
+        height: 70px;
+        background: green;
+        padding: 0 20px;
+        color: white;
+}
+    
+    .logo{
+        line-height: 25px;
+        float: left;
+        font-family: Arial;
+        text-transform: uppercase;
+        color: white;
+}
+
+    .menu{
+        float: right;
+        line-height: 30px;
+}
+  
+    .menu a{
+        color: white;
+        font-family: Arial;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0 10px;
+        transition: 0.4s;
+          }

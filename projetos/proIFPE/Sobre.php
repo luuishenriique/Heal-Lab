@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<title>Sobre</title>
 </head>
 <body>
+	
+	<div class="header">
+    <h1 class="logo">ProIFPE</h1>
+      <i class="Arial"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="index.php">Inicío</a>
+      <a href="Sobre.php">Sobre</a>
+        <i class="Arial"></i>
+      </label>
+    </ul>
+  </div>
+
 	<h1><?php echo "Sobre a equipe de desenvolvimento" ?></h1>
 	<br>
 	<p><?php echo "O grupo de desenvolvimento responsável por desenvolver este projeto tem os seguintes integrantes:" ?></p>
@@ -28,9 +43,9 @@
 
 
 		<tr>
-				<td>Larissa Ferreira</td>
-				<td>larissa.f.lopes@outlook.com</td>
-				<td>https://github.com/FerreiraLarissa</td>
+				    <td>Larissa Ferreira</td>
+				    <td>larissa.f.lopes@outlook.com</td>
+				    <td>https://github.com/FerreiraLarissa</td>
 		</tr>
 
 
@@ -67,7 +82,7 @@
 	<h1>A origem do nome do grupo</h1>
 	<p><?php echo "O nome do grupo se deu a um acrônimo de letras contidas nos nomes dos integrantes do grupo, onde a palavra " ?><strong>Heal</strong> <?php echo " tem como um de seus significados " ?><strong>melhoria</strong><?php echo ". E a segunda a palavra, " ?><strong>Lab</strong><?php echo " signfica " ?><strong>laboratório</strong><?php echo " que leva dois sentidos, um onde é o local onde passamos a maioria de nosso tempo desenvolvendo e o outro é por ser o local de onde sai os experimentos." ?></p>
 	<br>
-	<a href="index.php">Página Inicial</a>
+	
 </body>
 </html>
 </body>

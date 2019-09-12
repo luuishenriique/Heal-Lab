@@ -6,6 +6,19 @@
 	<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+	<div class="header">
+    <h1 class="logo">ProIFPE</h1>
+      <i class="Arial"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="#">Inicío</a>
+      <a href="Sobre.php">Sobre</a>
+        <i class="Arial"></i>
+      </label>
+    </ul>
+  </div>
+
 	<h1><?php echo "Projeto de proposta para o ProIFPE"; ?></h1>
 	<br>
 	<h2><?php echo "Informações sobre o projeto"; ?></h2>
@@ -27,7 +40,7 @@
 	<p><?php echo "A nossa expectativa é que esse site funcione em nossa instituição." ?></p>
 	<br>
 
-	<a rel="stylesheet" href="Sobre.php">Sobre</a> 
+	
 	
 </body>
 </html>
