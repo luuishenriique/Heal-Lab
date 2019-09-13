@@ -6,7 +6,7 @@ html {
         padding: 0;
         text-align: center;
         color: white;
-        background: url(IFPE_Pronatec_.jpg) no-repeat bottom center scroll;
+        background: url(background.jpg) no-repeat bottom center scroll;
         background-color: white;
         -webkit-background-size: contain;
         -moz-background-size: contain;
@@ -15,17 +15,25 @@ html {
         font-family: Arial, Helvetica, sans-serif;
 }
 
+
+img{
+        /*logo do if em cima*/
+        width: 200px;
+        height: 66px;
+        padding: 2px;
+}
+
 table, th, td{
         border-collapse: collapse;
         border-spacing: 0;
         text-align: center;
-    padding: 16px;
-    border-color: black;
-    border: 1px solid black;
-    width: 60%;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+        padding: 16px;
+        border-color: black;
+        border: 1px solid black;
+        width: 60%;
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
                      
                   
 }

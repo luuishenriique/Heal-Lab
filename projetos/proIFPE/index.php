@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="header">
-    <h1 class="logo">ProIFPE</h1>
+    <img src="logo.png" alt="logo" class="logo">
       <i class="Arial"></i>
     </label>
 
