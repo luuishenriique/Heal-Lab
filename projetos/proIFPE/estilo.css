@@ -1,31 +1,46 @@
-	body {
-		background-image: url("IFPE_Pronatec_.jpg");
-		background-size: contain;
-        /*width: 1500px;*/
-        margin: 0 auto;
+html {
+        margin 0;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        text-align: center;
+        color: white;
+        background: url(IFPE_Pronatec_.jpg) no-repeat bottom center scroll;
+        background-color: white;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        -o-background-size: contain;
 }
-	}
-	table, th, td{
-			border-collapse: collapse;
-			border-spacing: 0;
-			text-align: center;
-  			padding: 16px;
-  			border-color: black;
-  			border: 1px solid black;
-		}
-	h1, h2 {
+
+table, th, td{
+		border-collapse: collapse;
+		border-spacing: 0;
+		text-align: center;
+  		padding: 16px;
+  		border-color: black;
+  		border: 1px solid black;
+}
+
+h1, h2 {
 		text-align: center;
 		color: black;
-		/*background-color: green;*/
-	}
-    .header{
+}
+
+p, li {
+        color: black;
+        text-shadow: 0 0 3px white;
+}
+
+.header{
         height: 70px;
-        background: green;
+        background: #87c540;
         padding: 0 20px;
         color: white;
 }
     
-    .logo{
+.logo{
         line-height: 25px;
         float: left;
         font-family: Arial;
@@ -33,16 +48,16 @@
         color: white;
 }
 
-    .menu{
+.menu{
         float: right;
         line-height: 30px;
 }
   
-    .menu a{
+.menu a{
         color: white;
         font-family: Arial;
         text-transform: uppercase;
         text-decoration: none;
         padding: 0 10px;
         transition: 0.4s;
-          }
+}
