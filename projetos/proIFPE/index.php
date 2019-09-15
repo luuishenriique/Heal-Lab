@@ -7,13 +7,14 @@
 </head>
 <body>
 	<div class="header">
-    <img src="logo.png" alt="logo" class="logo">
+    <a href="index.php"><img src="logo.png" alt="logo" class="logo">
       <i class="Arial"></i>
     </label>
 
     <ul class="menu">
       <a href="#">Inicío</a>
       <a href="Sobre.php">Sobre</a>
+       <a href="horario.php">Horário</a>
         <i class="Arial"></i>
       </label>
     </ul>

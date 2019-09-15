@@ -6,15 +6,15 @@
 	<title>Sobre</title>
 </head>
 <body>
-	
-	<div class="header">
-    <h1 class="logo">ProIFPE</h1>
+		<div class="header">
+     <a href="index.php"><img src="logo.png" alt="logo" class="logo">
       <i class="Arial"></i>
     </label>
 
     <ul class="menu">
       <a href="index.php">Inicío</a>
       <a href="Sobre.php">Sobre</a>
+       <a href="horario.php">Horário</a>
         <i class="Arial"></i>
       </label>
     </ul>
