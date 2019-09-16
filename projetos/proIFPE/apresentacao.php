@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Apresentação</title>
+	<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 	
@@ -20,9 +21,12 @@
 	</ul>
 	</div>
 
-	<h1><?php echo "Informações sobre as cadeiras e docentes participates do ProIFPE"; ?></h1>
+	<h1><?php echo "Informações sobre docentes e cadeiras atualmente disponíveis no ProIFPE"; ?></h1>
 	<br>
-	
+	<h2> <?php echo "ProIFPE Informática"; ?> </h2>
+	<p> <?php echo "Matéria ministrada pelo docente Ranieri e apenas para os alunos do curso de Informática para Internet do 1º período, nela é ensinado o básico de HTML e CSS, além de serem respondidas algumas dúvidas sobre JavaScript"; ?> </p>
+	<h2> <?php echo "ProIFPE Matemática"; ?> </h2>
+	<p> <?php echo "Matéria ministrada pelo docente Cicero para alunos de Logística do 1º Período, e pelo professor Maurício, que ensina os alunos dos cursos de Logística e Informática para Internet do 1º período à tarde, na matéria são reforçados assuntos dados nas aulas normais"; ?> </p>
 
 </body>
 </html>
