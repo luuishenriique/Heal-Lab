@@ -58,18 +58,18 @@ h1, h2 {
         color: black;
         padding: 5px 15px;
         font-size: 30px; 
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Sintony', sans-serif;
     
 }
 
 p, li {
         color: black;
         text-shadow: 0 0 3px white;
-        list-style-type: square;
+        list-style-type: none;
         list-style-position: outside;
-        padding: 5px 15px;
+        padding: 5px 100px;
         font-size: 20px;
-        font-family: 'Dosis', sans-serif;
+        font-family: 'Poppins', sans-serif;
 }
 
 .header{
