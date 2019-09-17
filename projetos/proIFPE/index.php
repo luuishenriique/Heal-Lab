@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>proIFPE - Campus Igarassu</title>
 	<link rel="stylesheet" href="estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="header">

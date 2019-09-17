@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Horário</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 </head>
 <body>
 	
@@ -13,7 +15,7 @@
     </label>
 
     <ul class="menu">
-      <a href="#">Inicío</a>
+      <a href="index.php">Inicío</a>
       <a href="Sobre.php">Sobre</a>
        <a href="horario.php">Horário</a>
        <a href="apresentacao.php">Professores</a>

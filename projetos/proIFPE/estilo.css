@@ -36,6 +36,8 @@ h1, h2 {
         text-align: center;
         color: black;
         padding: 5px 15px;
+        font-size: 30px; 
+        font-family: 'Raleway', sans-serif;
     
 }
 
@@ -45,6 +47,8 @@ p, li {
         list-style-type: square;
         list-style-position: outside;
         padding: 5px 15px;
+        font-size: 20px;
+        font-family: 'Dosis', sans-serif;
 }
 
 .header{
