@@ -28,7 +28,7 @@
 	<p><?php echo "Projeto de alunos do Instituto Federal de Ciência e Tecnologia de Pernambuco - Campus Igarassu" ?></p>
 	<p><?php echo "Cadeira - Projeto e prática I" ?></p>
 	<p><?php echo "Docente - Alexandre Strapação Guedes Vianna" ?></p>
-	<p><?php echo "Professor Idealizador - Francisco" ?></p>
+	<p><?php echo "Professor Idealizador - Francisco Chaves Pinto" ?></p>
 	<br>
 	<p><?php echo "Este projeto está aos encargos de nosso grupo (Heal-Lab) e tem como responsabilidade desenvolver um sistema voltado para o proIFPE, contribuindo para melhorias para esta modalidade de ensino e tentará trazer alguns conceitos de utilização como: "; ?></p>
 	<br>
