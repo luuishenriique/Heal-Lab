@@ -11,6 +11,17 @@ body{
         font-family: Arial, Helvetica, sans-serif;
 }
 
+a:link {
+  color: green;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: #c0392b;
+}
 
 img{
         /*logo do if em cima*/
@@ -29,8 +40,18 @@ table, th, td{
         width: 60%;
         margin: 0 auto;
         font-family: Arial, Helvetica, sans-serif;
-        color: black;   
+        color: black;
+        overflow-x: auto; 
 }
+
+tr {
+        background-color: #f2f2f2;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+} 
 
 h1, h2 {
         text-align: center;
@@ -53,7 +74,7 @@ p, li {
 
 .header{
         height: 70px;
-        background: #87c540;
+        background: #4CAF50;
         padding: 0 20px;
         color: white;
 }
@@ -64,6 +85,7 @@ p, li {
         font-family: Arial;
         text-transform: uppercase;
         color: white;
+        transition: 0.4s;
 }
 
 .menu{
@@ -78,4 +100,8 @@ p, li {
         text-decoration: none;
         padding: 0 10px;
         transition: 0.4s;
+
 }
+
+.menu a:hover{background-color: #c0392b;}
+.logo:hover{background-color: #c0392b;}
