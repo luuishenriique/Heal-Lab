@@ -8,18 +8,19 @@
 <body>
 	
 	<div class="header">
-	<a href="index.php"><img src="logo.png" alt="logo" class="logo"></a>	
-	<i class="Arial"></i>
-	</label>
+    <a href="index.php"><img src="logo.png" alt="logo" class="logo">
+      <i class="Arial"></i>
+    </label>
 
-	<ul class="menu">
-		<a href="index.php">Início</a>
-		<a href="Sobre.php">Sobre</a>
-		<a href="horario.php">Horário</a>
-		<i class="Arial"></i>
-		</label>
-	</ul>
-	</div>
+    <ul class="menu">
+      <a href="#">Inicío</a>
+      <a href="Sobre.php">Sobre</a>
+       <a href="horario.php">Horário</a>
+       <a href="apresentacao.php">Professores</a>
+        <i class="Arial"></i>
+      </label>
+    </ul>
+  </div>
 
 	<h1><?php echo "Informações sobre docentes e cadeiras atualmente disponíveis no ProIFPE"; ?></h1>
 	<br>

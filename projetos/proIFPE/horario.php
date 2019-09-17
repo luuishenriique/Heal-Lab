@@ -13,9 +13,10 @@
     </label>
 
     <ul class="menu">
-      <a href="index.php">Inicío</a>
+      <a href="#">Inicío</a>
       <a href="Sobre.php">Sobre</a>
        <a href="horario.php">Horário</a>
+       <a href="apresentacao.php">Professores</a>
         <i class="Arial"></i>
       </label>
     </ul>
