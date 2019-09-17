@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<title>Sobre</title>
 </head>
 <body>
@@ -15,7 +15,6 @@
 
     <ul class="menu">
       <a href="index.php">Inicío</a>
-      <a href="Sobre.php">Sobre</a>
        <a href="horario.php">Horário</a>
        <a href="apresentacao.php">Professores</a>
         <i class="Arial"></i>
