@@ -16,7 +16,7 @@
     <ul class="menu">
       <a href="index.php">Inicío</a>
        <a href="horario.php">Horário</a>
-       <a href="apresentacao.php">Professores</a>
+       <a href="disciplinas.php">Professores</a>
         <i class="Arial"></i>
       </label>
     </ul>

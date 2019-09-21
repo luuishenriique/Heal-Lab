@@ -14,9 +14,9 @@
     </label>
 
     <ul class="menu">
-      <a href="Sobre.php">Sobre</a>
+      <a href="sobre.php">Sobre</a>
        <a href="horario.php">Horário</a>
-       <a href="apresentacao.php">Professores</a>
+       <a href="disciplinas.php">Professores</a>
         <i class="Arial"></i>
       </label>
     </ul>
