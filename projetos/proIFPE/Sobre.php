@@ -8,23 +8,10 @@
 	<title>Sobre</title>
 </head>
 <body>
-	<div class="header">
-    <a href="index.php"><img src="logo.png" alt="logo" class="logo">
-      <i class="Arial"></i>
-    </label>
-
-    <ul class="menu">
-      <a href="index.php">Inicío</a>
-       <a href="horario.php">Horário</a>
-       <a href="disciplinas.php">Professores</a>
-        <i class="Arial"></i>
-      </label>
-    </ul>
-  </div>
-
-	<h1><?php echo "Sobre a equipe de desenvolvimento" ?></h1>
+	<?php include "header.php" ?>
+	<h1>Sobre a equipe de desenvolvimento</h1>
 	<br>
-	<p><?php echo "O grupo de desenvolvimento responsável por desenvolver este projeto tem os seguintes integrantes:" ?></p>
+	<p>O grupo de desenvolvimento responsável por desenvolver este projeto tem os seguintes integrantes:</p>
 	<br>
 	<table>
 		<th>Nome</th>
@@ -82,7 +69,7 @@
 
 	<br>
 	<h1>A origem do nome do grupo</h1>
-	<p><?php echo "O nome do grupo se deu a um acrônimo de letras contidas nos nomes dos integrantes do grupo, onde a palavra " ?><strong>Heal</strong> <?php echo " tem como um de seus significados " ?><strong>melhoria</strong><?php echo ". E a segunda a palavra, " ?><strong>Lab</strong><?php echo " signfica " ?><strong>laboratório</strong><?php echo " que leva dois sentidos, um onde é o local onde passamos a maioria de nosso tempo desenvolvendo e o outro é por ser o local de onde sai os experimentos." ?></p>
+	<p>O nome do grupo se deu a um acrônimo de letras contidas nos nomes dos integrantes do grupo, onde a palavra <strong>Heal</strong> tem como um de seus significados <strong>melhoria</strong>. E a segunda a palavra, <strong>Lab</strong>, signfica <strong>laboratório</strong>, que leva dois sentidos, um onde é o local onde passamos a maioria de nosso tempo desenvolvendo e o outro é por ser o local de onde sai os experimentos.</p>
 	<br>
 	
 </body>

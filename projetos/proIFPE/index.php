@@ -8,19 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="header">
-    	<a href="index.php"><img src="logo.png" alt="logo" class="logo">
-      	<i class="Arial"></i>
-   		</label>
-    		<ul class="menu">
-      		<a href="Sobre.php">Sobre</a>
-       		<a href="horario.php">Horário</a>
-       		<a href="disciplinas.php">Professores</a>
-        	<i class="Arial"></i>
-    		</ul>
-      </label>
-  </div>
-
+	<?php include "header.php" ?>
 	<h1>Projeto de proposta para o ProIFPE</h1>
 	<br>
 	<h2>Informações sobre o projeto</h2>
@@ -41,9 +29,6 @@
 	<p>Podendo obter mais funcionalidades durante o processo de desenvolvimento.</p>
 	<p>O projeto tem como objetivo principal, criar um site que compute as faltas e notas de todos os alunos do PROIFPE.</p>
 	<p>A nossa expectativa é que esse site funcione em nossa instituição.</p>
-	<br>
-
-	
-	
+	<br>	
 </body>
 </html>

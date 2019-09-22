@@ -8,20 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-	
-	<div class="header">
-    <a href="index.php"><img src="logo.png" alt="logo" class="logo">
-      <i class="Arial"></i>
-    </label>
-
-    <ul class="menu">
-      <a href="index.php">Inicío</a>
-      <a href="sobre.php">Sobre</a>
-       <a href="disciplinas.php">Professores</a>
-        <i class="Arial"></i>
-      </label>
-    </ul>
-  </div>
+	<?php include "header.php" ?>
   	<h1>Horários</h1>
   	<p>Tabelas contendo horários e dias das disciplinas paricipantes do ProIFPE</p>
 	<br>

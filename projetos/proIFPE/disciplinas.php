@@ -6,20 +6,7 @@
   <link rel="stylesheet" href="estilocards.css">
 </head>
 <body>
-  <div class="header">
-    <a href="index.php"><img src="logo.png" alt="logo" class="logo">
-      <i class="Arial"></i>
-    </label>
-
-    <ul class="menu">
-      <a href="index.php">Inicío</a>
-      <a href="sobre.php">Sobre</a>
-       <a href="horario.php">Horário</a>
-        <i class="Arial"></i>
-      </label>
-    </ul>
-  </div>
-
+<?php include "header.php" ?>
  <div class="container">
       <div class="card">
          <div class="imgBx">
