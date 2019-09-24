@@ -66,7 +66,6 @@ h1, h2 {
 
 p, li {
         color: black;
-        text-shadow: 0 0 3px white;
         list-style-type: none;
         list-style-position: outside;
         padding: 5px 100px;
@@ -76,7 +75,7 @@ p, li {
 
 .header{
         height: 70px;
-        background: #4CAF50;
+        background: #1D5822;
         padding: 0 20px;
         color: white;
 }
@@ -100,13 +99,13 @@ p, li {
         font-family: Arial;
         text-transform: uppercase;
         text-decoration: none;
+        text-shadow: black 2px 2px;
         padding: 0 10px;
         transition: 0.4s;
 
 }
 
-.menu a:hover{background-color: #c0392b;}
-.logo:hover{background-color: #c0392b;}
+.menu a:hover{background-color: #357E2A;}
 
 .container{
     position: relative;
