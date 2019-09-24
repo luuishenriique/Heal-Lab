@@ -1,19 +1,16 @@
 body{
 	margin: 0;
 	padding: 0;
-	display: flex;
-	justify-content: center;
+    justify-content: center;
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Poppins', sans-serif;
-    background: url(Background.jpg);
+    background: url(laptop.jpg);
     background-size: 100% 100%;
     background-attachment: fixed;
     background-color: white;
-    text-align: center;
     width: 100%;
     height: 100%;
-   
 }
 a:link {
   color: green;
@@ -35,7 +32,7 @@ img{
 }
 .header{
         height: 70px;
-        background: #4CAF50;
+        background: #1D5822;
         padding: 0 20px;
         color: white;
 }
@@ -64,14 +61,15 @@ img{
 
 }
 
-.menu a:hover{background-color: #c0392b;}
-.logo:hover{background-color: #c0392b;}
+.menu a:hover{background-color: #357E2A;}
 
 .container{
-	position: relative;
+	height: 100vh;
 	width: 1000px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
 }
 
 .container .card{
@@ -101,8 +99,8 @@ img{
 .container .card .imgBx{
 	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
+	left: 50%;
+	right: 20%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -113,6 +111,7 @@ img{
 
 	margin: 10px 0 0;
 	padding: 0 ;
+	display: block;
 	color:;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -122,13 +121,13 @@ img{
 .container .card .overlay{
 
 	position: absolute;
-	bottom: 20px;
+	bottom: 50px;
 	right: 20px;
 	width: 50px;
-	height: 50px;
-	background: ;
+	height: 30px;
 	box-shadow: 0 2px 5px rgba(0,0,0,.2);
 	cursor:pointer;
+	color: black;
 	border-radius: 50%;
 	transition: 0.5s;
 }
@@ -151,7 +150,7 @@ img{
 	left: 0;
 	right: 0;
 	color:;
-	font-size: 12px;
+	font-size: 15px;
 	text-transform: uppercase;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -176,7 +175,7 @@ img{
 	opacity:0;
 	visibility: hidden; 
 	transform: 0s;
-	color: black;
+	color:#1e111d ;
 }
 
 .container .card .content h2{
