@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
 	<title>Horário</title>
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
+
 	<?php include "header.php" ?>
   	<h1>Horários</h1>
   	<p>Tabelas contendo horários e dias das disciplinas paricipantes do ProIFPE</p>
