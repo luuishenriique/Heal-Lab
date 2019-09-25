@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
   <title>Cadastro de Disciplinas</title>
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="css/estilo.css">
   <link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
   <?php include "header.php" ?>
     <?php
-      $dados = file('dados.csv');
+      $dados = file('src/disciplinas.csv');
       for ($i=0; $i < sizeof($dados); $i++) {
         $dados[$i] = explode(',', $dados[$i]);
       }
@@ -28,7 +28,7 @@
           <tr>
             <th>Disciplina</th>
             <th>Horário</th>
-            <th>Remover</th>
+            <th>Remover Disciplina</th>
           </tr>
 
       <?php foreach ($dados as $i => $dado):?>
@@ -37,7 +37,7 @@
               <td><?= $dados ?></td>
             <?php endforeach?>
               <td>
-                <a href="del.php?linha=<?= $i ?>">Remover</a>
+                <a href="del.php?linha=<?= $i ?>">X</a>
               </td>
           </tr>
          <?php endforeach ?>
