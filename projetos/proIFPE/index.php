@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
 	<title>proIFPE - Campus Igarassu</title>
-	<link rel="stylesheet" href="css/estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
+
 	<?php include "header.php" ?>
 	<h1>Projeto de proposta para o ProIFPE</h1>
 	<br>
