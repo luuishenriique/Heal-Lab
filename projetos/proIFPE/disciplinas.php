@@ -5,7 +5,7 @@
       <div class="card">
          <div class="imgBx">
               <div>
-                <img src="calculator.png">
+                <img src="../img/calculator.png">
               <h2>Matemática</h2>
                 </div>
              </div>
@@ -19,7 +19,7 @@
          <div class="card">
         <div class="imgBx">
                <div>
-              <img src="monitor.png">
+              <img src="../img/monitor.png">
               <h2>Informática</h2>
                 </div>
             </div>

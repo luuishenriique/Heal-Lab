@@ -1,11 +1,10 @@
 body{
-	  margin: 0;
-	  padding: 0;
+	margin: 0;
+	padding: 0;
     justify-content: center;
-	  align-items: center;
-	  min-height: 100vh;
-	  font-family: 'Poppins', sans-serif;
-    background-color: white;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100%;
 }
