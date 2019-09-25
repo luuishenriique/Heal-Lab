@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Disciplinas</title>
-  <link rel="stylesheet" href="css/estilocards.css">
-</head>
-<body>
+<title>Professores</title>
+
 <?php include "header.php" ?>
  <div class="container">
       <div class="card">
