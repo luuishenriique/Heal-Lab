@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<title>Sobre</title>
-</head>
-<body>
+
 	<?php include "header.php" ?>
 	<h1>Sobre a equipe de desenvolvimento</h1>
 	<br>
