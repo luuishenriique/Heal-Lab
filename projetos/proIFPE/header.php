@@ -8,9 +8,12 @@
 </head>
 <body>
 
+
 <div class="header">
-    <a href="index.php"><img src="img/logo.png" alt="logo" class="logo">
-    <i class="Arial"></i>
+    <span id="nome">IFPE</span>
+    <h1 class="logo">Instituto Federal de Pernambuco</h1>
+</div>
+    <div id="sobre">
 	   	</label>
 	    	<ul class="menu">
 	       	<a href="index.php">Início</a>
@@ -19,5 +22,8 @@
 	      	<a href="sobre.php">Sobre</a>
 	    	</ul>
 	    </label>
-    <i class="Arial"></i>
-</div>
+   
+   </div>
+
+
+ 

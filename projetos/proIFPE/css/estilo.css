@@ -25,12 +25,6 @@ a:hover {
   background-color: #7f8fa6; 
 }
 
-img{
-        /*logo do if em cima*/
-        width: 200px;
-        height: 66px;
-        padding: 2px;
-}
 
 table, th, td{
         border-collapse: collapse;
@@ -61,6 +55,7 @@ h1, h2 {
         padding: 5px 15px;
         font-size: 30px; 
         font-family: 'Sintony', sans-serif;
+        border-bottom: none;
     
 }
 
@@ -73,26 +68,72 @@ p, li {
         font-family: 'Poppins', sans-serif;
 }
 
+
 .header{
-        height: 70px;
-        background: #1D5822;
+        height: 100px;
+        background-color: rgb(10, 85, 23);
+        background-image: radial-gradient(ellipse at center, #19882c 1%, #025310 100%);
         padding: 0 20px;
+        padding-bottom: 40px;
+        padding-top: 20px;
         color: white;
+
+
 }
+
+#sobre{
+        
+        max-width: 100% !important;
+        line-height: 20px;
+        height: 29px;
+        background: #00420c;
+        color: white;
+        font-size: 14px;
+        padding-bottom: 0px;
+        padding-right: 10px;
+        padding-top: 0px;
+        text-align: right;
+        text-decoration: none;
     
-.logo{
-        line-height: 25px;
-        float: left;
-        font-family: Arial;
-        text-transform: uppercase;
-        color: white;
-        transition: 0.4s;
 }
+
+
+
+#nome{
+
+        font-size-adjust: none;
+        font-stretch: 100%;
+        font-style: normal;
+        font-variant-alternates: normal;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 839px;
+    
+    }
+
+
+.logo{
+        padding-right: 350px;
+        padding-left: 500px;        
+        float: left;     
+        text-transform: uppercase;      
+        transition: 0.4s;
+        margin-top: 30px;
+        color: #fff;
+        font-size: 50px;
+        font-family:"open_sansextrabold", Arial, Helvetica, sans-serif
+        font-weight: normal;
+        line-height: 20px;
+
+
+    }
 
 .menu{
         float: right;
-        line-height: 30px;
-}
+        line-height: 0px;
+        padding: 0px;
+    }
   
 .menu a{
         color: white;
