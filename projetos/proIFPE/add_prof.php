@@ -5,5 +5,5 @@ $nome = $_POST['professor']. ',' .  $_POST['disciplina']. ',' . $_POST['email'].
 $dados = fopen(PRO_FILE, 'a');
 fwrite($dados,$nome);
 
-redicect("cadastro_professores.php?msg=Registro inserido com sucesso!");
+redicect("cad_professores.php?msg=Registro inserido com sucesso!");
 ?>
