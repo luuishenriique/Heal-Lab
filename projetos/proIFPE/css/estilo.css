@@ -99,30 +99,56 @@ p, li {
 
 #nome{
 
-color:rgb(255, 255, 255);
-cursor:pointer;
-display:block;
-font-family:open_sansregular, Arial, Helvetica, sans-serif;
-font-size:12px;
-font-stretch:100%;
-font-style:normal;
-font-variant-caps:normal;
-font-variant-east-asian:normal;
-font-variant-ligatures:normal;
-font-variant-numeric:normal;
-font-weight:400;
-height:12px;
-line-height:1em;
-list-style-image:none;
-list-style-position:outside;
-list-style-type:none;
-margin:0px;
-padding:0px;
-position:absolute;
-top:30px;
-vertical-align:baseline;
-width:70%;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    display:block;
+    font-family:open_sansregular, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-stretch:100%;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-east-asian:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:400;
+    height:12px;
+    line-height:1em;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    top:30px;
+    vertical-align:baseline;
+    width:70%;
 
+}
+
+#nome-1{
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    display:block;
+    font-family:open_sansregular, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-stretch:100%;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-east-asian:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:400;
+    height:12px;
+    line-height:1em;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    position:absolute;
+    top:100px;
+    vertical-align:baseline;
+    width:76%;
 }
 
 
@@ -178,7 +204,6 @@ width:70%;
     font-family: Arial;
     text-transform: uppercase;
     text-decoration: none;
-    text-shadow: black 2px 2px;
     padding: 0 10px;
     transition: 0.4s;
 
