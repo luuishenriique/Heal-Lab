@@ -63,7 +63,7 @@ p, li {
     color: black;
     list-style-type: none;
     list-style-position: outside;
-    padding: 5px 100px;
+    padding: 5px 300px;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
@@ -99,31 +99,75 @@ p, li {
 
 #nome{
 
-    font-size-adjust: none;
-    font-stretch: 100%;
-    font-style: normal;
-    font-variant-alternates: normal;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
-    padding-right: 839px;
-    
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    display:block;
+    font-family:open_sansregular, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-stretch:100%;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-east-asian:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:400;
+    height:12px;
+    line-height:12px;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin-bottom:0px;
+    margin-left:576px;
+    margin-right:0px;
+    margin-top:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-top:0px;
+    position:absolute;
+    top:30px;
+    vertical-align:baseline;
+    width:23.4375px;
 }
 
 
 .logo{
-    padding-right: 350px;
-    padding-left: 500px;        
-    float: left;     
-    text-transform: uppercase;      
-    transition: 0.4s;
-    margin-top: 30px;
-    color: #fff;
-    font-size: 50px;
-    font-family:"open_sansextrabold", Arial, Helvetica, sans-serif
-    font-weight: normal;
-    line-height: 20px;
 
+    border-bottom-color:rgb(255, 255, 255);
+    border-bottom-style:none;
+    border-bottom-width:0px;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    display:block;
+    font-family:open_sansextrabold, Arial, Helvetica, sans-serif;
+    font-size:40.2px;
+    font-stretch:100%;
+    font-style:normal;
+    font-variant-caps:normal;
+    font-variant-east-asian:normal;
+    font-variant-ligatures:normal;
+    font-variant-numeric:normal;
+    font-weight:400;
+    height:40px;
+    letter-spacing:-2.01px;
+    line-height:40.2px;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin-block-end:46px;
+    margin-block-start:30px;
+    margin-bottom:46px;
+    margin-inline-end:0px;
+    margin-inline-start:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:30px;
+    padding-bottom:0px;
+    padding-left:500px;
+    padding-right:0px;
+    padding-top:0px;
+    vertical-align:baseline;
+    width:672px;
 
 }
 
