@@ -35,7 +35,7 @@
   <p>Matéria ministrada pelo docente Ranieri e apenas para os alunos do curso de Informática para Internet do 1º período, nela é ensinado o básico de HTML e CSS, além de serem respondidas algumas dúvidas sobre JavaScript</p>
   <h2>ProIFPE Matemática</h2>
   <p>Matéria ministrada pelo docente Cicero para alunos de Logística do 1º Período, e pelo professor Maurício, que ensina os alunos dos cursos de Logística e Informática para Internet do 1º período à tarde, na matéria são reforçados assuntos dados nas aulas normais</p>-->
-  <br>
+ <!-- <br>
   <br>
   <br>
   <br>
@@ -44,7 +44,7 @@
   <br>
   <br>
   <a href="cadastro_professores.php" style="text-align: center;">Adicionar Professores</a>
-  <a href="cadastro_disciplinas.php" style="text-align: center;">Adicionar Disciplinas</a>
+  <a href="cadastro_disciplinas.php" style="text-align: center;">Adicionar Disciplinas</a> -->
 
 </body>
 </html>
