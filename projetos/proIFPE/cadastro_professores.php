@@ -39,7 +39,7 @@ for ($i=0; $i < sizeof($dados); $i++) {
 				<td><?= $dados ?></td>
 			<?php endforeach ?>
 			<td>
-				<a href="del_prof.php?linha=<?= $i ?>">X</a>
+				<a href="del_prof.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt">
 			</td>
 		</tr>
 	<?php endforeach ?>
