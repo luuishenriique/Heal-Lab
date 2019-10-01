@@ -33,50 +33,50 @@
 		<th>Email</th>
 		<th>GitHub</th>
 		<tr>
-					<td>Gabriella Batista</td>
-					<td>gabriella10batista@gmail.com</td>
-					<td><a href="https://github.com/gabriellaBatista">https://github.com/gabriellaBatista</a></td>
+			<td>Gabriella Batista</td>
+			<td>gabriella10batista@gmail.com</td>
+			<td><a href="https://github.com/gabriellaBatista">https://github.com/gabriellaBatista</a></td>
 		</tr>
 		
 
 		<tr>
-					<td>Kauê Luí</td>
-					<td>ofckaue@gmail.com</td>
-					<td><a href="https://github.com/KaueLui">https://github.com/KaueLui</a></td>
+			<td>Kauê Luí</td>
+			<td>ofckaue@gmail.com</td>
+			<td><a href="https://github.com/KaueLui">https://github.com/KaueLui</a></td>
 		</tr>
 
 
 		<tr>
-				    <td>Larissa Ferreira</td>
-				    <td>larissa.f.lopes@outlook.com</td>
-				    <td><a href="https://github.com/FerreiraLarissa">https://github.com/FerreiraLarissa</a></td>
+			<td>Larissa Ferreira</td>
+			<td>larissa.f.lopes@outlook.com</td>
+			<td><a href="https://github.com/FerreiraLarissa">https://github.com/FerreiraLarissa</a></td>
 		</tr>
 
 
 		<tr>
-					<td>Luis Henrique</td>
-					<td>luis_henrique_co@hotmail.com</td>
-					<td><a href="https://github.com/luuishenriique">https://github.com/luuishenriique</a></td>
+			<td>Luis Henrique</td>
+			<td>luis_henrique_co@hotmail.com</td>
+			<td><a href="https://github.com/luuishenriique">https://github.com/luuishenriique</a></td>
 		</tr>
 		
 
 		<tr>
-					<td>Maria Conceição</td>
-					<td>maria4682@gmail.com</td>
-					<td><a href="https://github.com/MARIA617">https://github.com/MARIA617</a></td>
+			<td>Maria Conceição</td>
+			<td>maria4682@gmail.com</td>
+			<td><a href="https://github.com/MARIA617">https://github.com/MARIA617</a></td>
 		</tr>
 
 
 		<tr>
-					<td>Maria Eduarda</td>
-					<td>mariaeduardaj585@gmail.com</td>
-					<td><a href="https://github.com/Eduarda19">https://github.com/Eduarda19</a></td>
+			<td>Maria Eduarda</td>
+			<td>mariaeduardaj585@gmail.com</td>
+			<td><a href="https://github.com/Eduarda19">https://github.com/Eduarda19</a></td>
 		</tr>
 
 		<tr>
-					<td>Mateus Lopes</td>
-					<td>mateusyasmim2014@gmail.com</td>
-					<td><a href="https://github.com/Mateuslpds">https://github.com/Mateuslpds</a></td>
+			<td>Mateus Lopes</td>
+			<td>mateusyasmim2014@gmail.com</td>
+			<td><a href="https://github.com/Mateuslpds">https://github.com/Mateuslpds</a></td>
 		</tr>
 
 
