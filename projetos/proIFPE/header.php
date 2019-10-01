@@ -6,6 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="img/5235fav.ico">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">">
 </head>
 <body>
 
