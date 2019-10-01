@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="img/5235fav.ico">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
 <body>
 
@@ -22,6 +22,7 @@
 		<a href="index.php">Início</a>
 		<a href="disciplinas.php">Professores</a>
 		<a href="horario.php">Horário</a>
+		<a href="cadastro.php">Cadastro</a>
 		<a href="sobre.php">Sobre</a>
 	</ul>
 </label>
