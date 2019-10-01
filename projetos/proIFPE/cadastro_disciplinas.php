@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/estilo.css">
   <link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
 <body>
   <?php include "header.php" ?>
@@ -16,7 +17,7 @@
       }
     ?>
         <legend>Cadastro de Disciplinas</legend>
-     <form action="add.php" method="POST" style="text-align: center;">
+     <form action="add_dis.php" method="POST" style="text-align: center;">
             <fieldset>
               <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
               <input type="text" name="horario" placeholder="Horário"><br>
@@ -28,7 +29,11 @@
           <tr>
             <th>Disciplina</th>
             <th>Horário</th>
+            <th>Turno</th>
+            <th>Ínicio</th>
+            <th>Término</th>
             <th>Remover Disciplina</th>
+            <th>Editar</th>
           </tr>
 
       <?php foreach ($dados as $i => $dado):?>
@@ -37,7 +42,10 @@
               <td><?= $dados ?></td>
             <?php endforeach?>
               <td>
-                <a href="del.php?linha=<?= $i ?>">X</a>
+                <a href="del_dis.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt"></i>
+              </td>
+              <td>
+                <a href="edi_dis.php?linha=<?= $id ?>" class="btn"><i class="far fa-edit"></i></a>
               </td>
           </tr>
          <?php endforeach ?>
