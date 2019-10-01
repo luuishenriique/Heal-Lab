@@ -11,5 +11,5 @@ foreach ($info as $dados) {
 $file = fopen(DIS_FILE, "w");
 fwrite($file, $str); /*dados sendo transcitos pela linha vazia*/
 
-redicect("cadastro_disciplinas.php?msg=Registro apagado com sucesso!");
+redicect("cad_disciplinas.php?msg=Registro apagado com sucesso!");
 ?>
