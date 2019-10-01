@@ -24,6 +24,9 @@ for ($i=0; $i < sizeof($dados); $i++) {
     <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
     <input type="text" name="dia" placeholder="Dia"><br>
     <input type="text" name="horario" placeholder="Horário"><br>
+    <input type="text" name="turno" placeholder="Turno"><br>
+    <input type="text" name="inicio" placeholder="Ínicio"><br>
+    <input type="text" name="termino" placeholder="Término"><br>
     <input type="submit" value="Adicionar">
   </fieldset>
 </form>
