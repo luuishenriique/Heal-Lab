@@ -99,35 +99,30 @@ p, li {
 
 #nome{
 
-    color:rgb(255, 255, 255);
-    cursor:pointer;
-    display:block;
-    font-family:open_sansregular, Arial, Helvetica, sans-serif;
-    font-size:12px;
-    font-stretch:100%;
-    font-style:normal;
-    font-variant-caps:normal;
-    font-variant-east-asian:normal;
-    font-variant-ligatures:normal;
-    font-variant-numeric:normal;
-    font-weight:400;
-    height:12px;
-    line-height:12px;
-    list-style-image:none;
-    list-style-position:outside;
-    list-style-type:none;
-    margin-bottom:0px;
-    margin-left:576px;
-    margin-right:0px;
-    margin-top:0px;
-    padding-bottom:0px;
-    padding-left:0px;
-    padding-right:0px;
-    padding-top:0px;
-    position:absolute;
-    top:30px;
-    vertical-align:baseline;
-    width:23.4375px;
+color:rgb(255, 255, 255);
+cursor:pointer;
+display:block;
+font-family:open_sansregular, Arial, Helvetica, sans-serif;
+font-size:12px;
+font-stretch:100%;
+font-style:normal;
+font-variant-caps:normal;
+font-variant-east-asian:normal;
+font-variant-ligatures:normal;
+font-variant-numeric:normal;
+font-weight:400;
+height:12px;
+line-height:1em;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0px;
+padding:0px;
+position:absolute;
+top:30px;
+vertical-align:baseline;
+width:70%;
+
 }
 
 
@@ -150,7 +145,7 @@ p, li {
     font-weight:400;
     height:40px;
     letter-spacing:-2.01px;
-    line-height:40.2px;
+    line-height:1em;
     list-style-image:none;
     list-style-position:outside;
     list-style-type:none;
@@ -163,11 +158,12 @@ p, li {
     margin-right:0px;
     margin-top:30px;
     padding-bottom:0px;
-    padding-left:500px;
+    padding-left:0px;
     padding-right:0px;
     padding-top:0px;
     vertical-align:baseline;
-    width:672px;
+    width:98%;
+
 
 }
 
