@@ -46,6 +46,7 @@ tr {
 
 th {
   background-color: #4CAF50;
+  background-image: radial-gradient(ellipse at center, #19882c 1%, #025310 100%);
   color: white;
 } 
 
