@@ -1,7 +1,9 @@
-<?php 
-	$nome = $_POST['professor']. ',' .  $_POST['disciplina']. ',' . $_POST['email']. "\n";
-	$dados = fopen('src/professores.csv', 'a');
-	fwrite($dados,$nome);
+<?php
+include 'config.php';
 
-	header('Location: index.php');
- ?>
+$nome = $_POST['professor']. ',' .  $_POST['disciplina']. ',' . $_POST['email']. "\n";
+$dados = fopen(PRO_FILE, 'a');
+fwrite($dados,$nome);
+
+redicect("cadastro_professores.php?msg=Registro inserido com sucesso!");
+?>
