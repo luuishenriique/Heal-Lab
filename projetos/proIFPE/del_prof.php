@@ -1,13 +1,15 @@
 <?php
-	$linha = $_GET['linha']; /*get para receber o valor da linha*/
-	$info = file('src/professores.csv');
-	unset($info[$linha]);
-	$str = ""; /*dados vazios que vão limpar a linha*/
-	foreach ($info as $dados) {
-		$str = $str.$dados;
-	}
-	$file = fopen('src/professores.csv', "w");
-	fwrite($file, $str); /*dados sendo transcitos pela linha vazia*/
+include 'config.php';
 
-	header('location:index.php');
+$linha = $_GET['linha']; /*get para receber o valor da linha*/
+$info = file(PRO_FILE);
+unset($info[$linha]);
+$str = ""; /*dados vazios que vão limpar a linha*/
+foreach ($info as $dados) {
+  $str = $str.$dados;
+}
+$file = fopen(PRO_FILE, "w");
+fwrite($file, $str); /*dados sendo transcitos pela linha vazia*/
+
+redicect("cadastro_professores.php?msg=Registro apagado com sucesso!");
 ?>
