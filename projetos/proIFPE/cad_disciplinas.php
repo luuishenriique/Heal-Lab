@@ -37,6 +37,7 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <table>
   <tr>
     <th>Disciplina</th>
+    <th>Dia</th>
     <th>Horário</th>
     <th>Turno</th>
     <th>Ínicio</th>
