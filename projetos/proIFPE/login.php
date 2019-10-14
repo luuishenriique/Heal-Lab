@@ -19,12 +19,11 @@
 	<div id="sobre">
 	</label>
 	<ul class="menu">
-		
+	
 	</ul>
 </label>
 
 </div>
-
 	<h2><a href="cadastro.php" style="text-align: center;">CADASTRO</a></h2>
     <h2><a href="#" style="text-align: center;">LOGIN</a></h2>
 	
