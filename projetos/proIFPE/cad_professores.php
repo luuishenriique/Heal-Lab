@@ -27,9 +27,8 @@ for ($i=0; $i < sizeof($dados); $i++) {
 	<fieldset>
 		<input type="text" name="professor" placeholder="Professor"><br>
 		<select name="select-dis">
-			<?php foreach ($dado as $dd): ?>
-				<option value="<?= $dd ?>"><?= $dd ?></option>
-			<?php endforeach?>
+				<option value="Informática p/ Internet">Informática p/ Internet</option>
+				<option value="Matemática">Matemática</option>
 		</select><br>
 		<input type="text" name="email" placeholder="Email"><br>
 		<input type="submit" value="Adicionar">
