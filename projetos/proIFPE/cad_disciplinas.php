@@ -7,9 +7,10 @@ include "config.php";
 
 <?php
 $dados = file(DIS_FILE);
+
 for ($i=0; $i < sizeof($dados); $i++) {
   $dados[$i] = explode(',', $dados[$i]);
-}
+} 
 ?>
 
 <?php if (!empty($_GET['msg'])): ?>
@@ -25,7 +26,6 @@ for ($i=0; $i < sizeof($dados); $i++) {
     <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
     <input type="text" name="dia" placeholder="Dia"><br>
     <input type="text" name="horario" placeholder="Horário"><br>
-    <input type="text" name="turno" placeholder="Turno"><br>
     <input type="text" name="inicio" placeholder="Ínicio"><br>
     <input type="text" name="termino" placeholder="Término"><br>
     <input type="submit" value="Adicionar">
@@ -39,7 +39,6 @@ for ($i=0; $i < sizeof($dados); $i++) {
     <th>Disciplina</th>
     <th>Dia</th>
     <th>Horário</th>
-    <th>Turno</th>
     <th>Ínicio</th>
     <th>Término</th>
     <th>Remover Disciplina</th>
