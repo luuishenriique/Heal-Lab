@@ -87,7 +87,4 @@
 	<p>O nome do grupo se deu a um acrônimo de letras contidas nos nomes dos integrantes do grupo, onde a palavra <strong>Heal</strong> tem como um de seus significados <strong>melhoria</strong>. E a segunda a palavra, <strong>Lab</strong>, signfica <strong>laboratório</strong>, que leva dois sentidos, um onde é o local onde passamos a maioria de nosso tempo desenvolvendo e o outro é por ser o local de onde sai os experimentos.</p>
 	<br>
 	
-</body>
-</html>
-</body>
-</html>
+	<?php include 'footer.php' ?>
