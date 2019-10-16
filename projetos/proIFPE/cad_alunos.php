@@ -20,22 +20,37 @@ for ($i = 0; $i < sizeof($dados); $i++) {
 <legend class="leg_form">Informações sobre o aluno</legend>
 <form class="form_info" action="add_aln.php" method="POST">
 	<fieldset>
-		<input type="text" name="aluno" placeholder="Nome do Aluno">
 		<input type="text" name="matricula" placeholder="Matrícula">
-		<input type="text" name="curso" placeholder="Curso Realizado">
-		<input type="text" name="data" placeholder="Data de entrada">
+		<input type="text" name="aluno" placeholder="Nome do Aluno">
+		<input type="text" name="email" placeholder="Email do Aluno">
+		<p>Curso:</p>
+		<select name="curso">
+			<option value="" selected>Selecione o curso</option>
+			<option value="Informática para internet">Informática para internet</option>
+			<option value="Logística">Logística</option>
+		</select>
+		<p>Disciplina:</p>
+		<select name="disciplina">
+			<option value="" selected>Selecione a disciplina</option>
+			<option value="Matemática">Matemática</option>
+			<option value="Informática">Informática</option>
+		</select>
+		<p>---------------------</p>
+		<!-- <input type="date" name="data" placeholder="Data de entrada"> -->
 		<input type="submit" value="Adicionar">
 		<input type="reset" value="Limpar">
 	</fieldset>
 </form>
 <br>
-
+<h2>Alunos cadastrados</h2>
+<br>
 <table>
 	<tr>
-		<th>Nome do Aluno</th>
 		<th>Matrícula</th>
-		<th>Curso Realizado</th>
-		<th>Data de entrada</th>
+		<th>Nome do Aluno</th>
+		<th>Email</th>
+		<th>Curso</th>
+		<th>Disciplina</th>
 		<th>Apagar Aluno</th>
 	</tr>
 	<?php foreach ($dados as $i => $dado): ?>
@@ -49,6 +64,5 @@ for ($i = 0; $i < sizeof($dados); $i++) {
 		</tr>
 	<?php endforeach ?>
 </table>
-</body>
-</html>
+<?php include 'footer.php' ?>
 
