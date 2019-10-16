@@ -1,4 +1,4 @@
-<title>Cadastro de Disciplinas</title>
+<title>Cadastro de Aulas</title>
 
 <?php 
 include "header.php";
@@ -20,27 +20,51 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <?php endif ?>
 
 <br>
-<legend class="leg_form">Cadastro de Disciplinas</legend>
+<legend class="leg_form">Cadastro de Aula</legend>
 <form class="form_info" action="add_dis.php" method="POST" style="text-align: center;">
   <fieldset>
-    <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
+    <!-- <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
     <input type="text" name="dia" placeholder="Dia"><br>
-    <input type="text" name="horario" placeholder="Horário"><br>
-    <input type="text" name="inicio" placeholder="Ínicio"><br>
-    <input type="text" name="termino" placeholder="Término"><br>
+    <input type="text" name="horario" placeholder="Horário"><br> -->
+    <p>Disciplina:</p>
+    <select name="disciplina">
+      <option value="" selected>Selecione a disciplina</option>
+      <option value="Informática">Informática</option>
+      <option value="Matemática">Matemática</option>
+    </select>
+    <p>Dia:</p>
+    <select name="dia">
+      <option value="" selected>Selecione o dia da semana</option>
+      <option value="Segunda">Segunda</option>
+      <option value="Terça">Terça</option>
+      <option value="Quarta">Quarta</option>
+      <option value="Quinta">Quinta</option>
+      <option value="Sexta">Sexta</option>
+    </select>
+    <p>Turno:</p>
+    <select name="turno">
+      <option value="" selected>Selecione o turno</option>
+      <option value="Manhã">Manhã</option>
+      <option value="Tarde">Tarde</option>
+    </select>
+    <p>-----------------</p>
+    <p>Início da aula:</p><input type="time" name="inicio"><br>
+    <p>Término da aula:</p><input type="time" name="termino"><br>
+    <p>-----------------</p>
     <input type="submit" value="Adicionar">
     <input type="reset" value="Limpar">
   </fieldset>
 </form>
 <br>
-
+<h2>Aulas cadastradas</h2>
+<br>
 <table>
   <tr>
     <th>Disciplina</th>
     <th>Dia</th>
-    <th>Horário</th>
-    <th>Ínicio</th>
-    <th>Término</th>
+    <th>Turno</th>
+    <th>Hora início</th>
+    <th>Hora término</th>
     <th>Remover Disciplina</th>
     <th>Editar</th>
   </tr>
@@ -59,5 +83,4 @@ for ($i=0; $i < sizeof($dados); $i++) {
     </tr>
   <?php endforeach ?>
 </table>
-</body>
-</html>
+<?php include 'footer.php' ?>
