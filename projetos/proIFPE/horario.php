@@ -65,5 +65,4 @@
 <br>
 <p>Todos horários citados acima representam as cadeiras e professores que participam do programa.</p>
 <br>
-</body>
-</html>
+<?php include 'footer.php' ?>
