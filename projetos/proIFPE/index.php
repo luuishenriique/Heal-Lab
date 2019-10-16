@@ -5,7 +5,6 @@
 	<p>Sistema de dados para o ProIFPE</p>
 
 	<h2><a href="cadastro.php" style="text-align: center;">CADASTRO</a></h2>
-    <h2><a href="login_teacher.php" style="text-align: center;">LOGIN PROFESSOR</a></h2>
-    <h2><a href="login_student.php" style="text-align: center;">LOGIN ALUNO</a></h2>
-</body>
-</html>
+	<h2><a href="login_teacher.php" style="text-align: center;">LOGIN PROFESSOR</a></h2>
+	<h2><a href="login_student.php" style="text-align: center;">LOGIN ALUNO</a></h2>
+	<?php include 'footer.php' ?>
