@@ -30,7 +30,7 @@ table, th, td{
     border-collapse: collapse;
     border-spacing: 0;
     text-align: center;
-    padding: 25px 100px;
+    padding: 25px 50px;
     border-color: black;
     border: 1px solid black;
     width: 60%;
@@ -60,14 +60,14 @@ h1, h2 {
     
 }
 
-p, li {
+/*p, li {
     color: black;
     list-style-type: none;
     list-style-position: outside;
     padding: 5px 300px;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
-}
+}*/
 
 
 .header{
@@ -222,126 +222,94 @@ p, li {
     text-transform: uppercase;
 }
 
-.container{
-    position: relative;
-    width: 1000px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.container .card{
-
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.container .card:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background:;
-    z-index: 20;
-    pointer-events: none;
-}
-
-.container .card .imgBx{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.container .card .imgBx h2{
-
-    margin: 10px 0 0;
-    padding: 0 ;
-    color:;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.container .card .overlay{
-
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background: ;
-    box-shadow: 0 2px 5px rgba(0,0,0,.2);
-    cursor:pointer;
-    border-radius: 50%;
-    transition: 0.5s;
-}
-
-.container .card .overlay:hover{
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
-    opacity: 0.9;
-    border-radius: 0;
-}
-
-.container .card .overlay:before{
-
-    content: 'Ler';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    color:;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-delay: 0.5s;
-}
-
-.container .card .overlay:hover:before{
-
-    display: none;
-    transition-delay: 0s;
-
-}
-
-.container .card .content{
-    padding: 20px;
+.form_info{
     box-sizing: border-box;
-    z-index: 1;
-    pointer-events: none;
-    opacity:0;
-    visibility: hidden; 
-    transform: 0s;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+input[type=text]{
+    border: none;
+    border-bottom: 2px solid #4CAF50;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=time]{
+  font-size: 16px;
+}
+
+.form_info select{
+  width: 85%;
+  font-size: 16px;
+  text-align: center;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.leg_form {
+  display: block;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
+  font-size: 30px;
+}
+
+.msg_info{
+    text-align: center;
+    background-color: yellow;
     color: black;
+    transition: 1s;
+    width: 50%;
+    margin: 0 auto;
+    text-transform: uppercase;
 }
 
-.container .card .content h2{
-    margin :0;
-    padding: 0;
+.card_mat {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 15 auto;
+  height: 85%; 
+  max-width: 300px;
+  text-align: center; 
 }
 
-.container .card .overlay:hover ~ .content{
-    opacity: 1;
-    visibility: visible;
-    transition: 0.2s;
-    transition-delay: 0.5s;
+.card_mat:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.titulo_mat {
+  color: #4CAF50;
+  font-size: 32px;
+  text-align: center;
+}
+
+.title_mat{
+    color: #4CAF50;
+    font-size: 32px;
+}
+
+.p_mat{
+    color: black;
+    font-size: 20px;
+    text-align: center;
 }
