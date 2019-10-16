@@ -25,20 +25,26 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <legend class="leg_form">Informações sobre o professor</legend>
 <form class="form_info" action="add_prof.php" method="POST" style="text-align: center;">
 	<fieldset>
+		<input type="text" name="siape" placeholder="SIAPE">
 		<input type="text" name="professor" placeholder="Professor"><br>
-		<select name="select-dis">
-				<option value="Informática p/ Internet">Informática p/ Internet</option>
-				<option value="Matemática">Matemática</option>
-		</select><br>
 		<input type="text" name="email" placeholder="Email"><br>
+		<p>Disciplina:</p>
+		<select name="disc-prof">
+			<option value="" selected>Selecione a disciplina</option>
+			<option value="Informática">Informática</option>
+			<option value="Matemática">Matemática</option>
+		</select>
+		<p>--------------</p>
 		<input type="submit" value="Adicionar">
 		<input type="reset" value="Limpar">
 	</fieldset>
 </form>
 <br>
-
+<h2>Professores cadastrados</h2>
+<br>
 <table>
 	<tr>
+		<th>SIAPE</th>
 		<th>Professor</th>
 		<th>Disciplina</th>
 		<th>Email</th>
@@ -55,5 +61,4 @@ for ($i=0; $i < sizeof($dados); $i++) {
 		</tr>
 	<?php endforeach ?>
 </table>
-</body>
-</html>
+<?php include 'footer.php' ?>
