@@ -24,6 +24,7 @@
 		<a href="horario.php">Horário</a>
 		<a href="cadastro.php">Cadastro</a>
 		<a href="sobre.php">Sobre</a>
+		<a href="notificacao.php">Notificação</a>
 	</ul>
 </label>
 
