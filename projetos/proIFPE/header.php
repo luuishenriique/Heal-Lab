@@ -25,6 +25,7 @@
 		<a href="cadastro.php">Cadastro</a>
 		<a href="sobre.php">Sobre</a>
 		<a href="notificacao.php">Notificação</a>
+		<a href="cad_turmas.php">Turmas</a>
 	</ul>
 </label>
 
