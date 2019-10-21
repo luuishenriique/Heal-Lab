@@ -2,10 +2,10 @@
 
 require 'config.php';
 
-$nome = trim($_POST['nome']);
 $matricula = trim($_POST['matricula']);
+$senha = trim($_POST['senha']);
 
-if (!strlen($nome) || !strlen($matricula)) {
+if (!strlen($senha) || !strlen($matricula)) {
     die('Preencha os campos');
 }
 
@@ -15,7 +15,7 @@ $handle = fopen("src/alunos.csv", "r");
 
 while (($data = fgetcsv($handle)) == TRUE) {
 
-    if ($data[0] == $nome && $data[1] == $matricula) {
+    if ($data[1] == $senha && $data[0] == $matricula) { /*inserir senha para aluno!*/
         $success = true;
         break;
     }
