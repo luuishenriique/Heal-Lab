@@ -6,7 +6,11 @@ include "config.php";
 ?>
 
 <?php
+$dado = file(TUR_FILE);
+
 $dados = file(DIS_FILE);
+
+$disciplina = [];
 
 for ($i=0; $i < sizeof($dados); $i++) {
   $dados[$i] = explode(',', $dados[$i]);
@@ -56,6 +60,15 @@ for ($i=0; $i < sizeof($dados); $i++) {
     <br>
     <legend>Horário de término</legend>
     <input type="time" name="termino">
+    </div>
+     <p>-----------------</p>
+     <div>
+    <legend>Turma</legend>
+    <select type="text" name="select-turma">
+       <?php foreach($dado as $dd): ?>
+            <option value="<? $dd ?>"><?= trim($dd[0]) ?></option>
+        <?php endforeach ?>
+      </select>
     </div>
     <p>-----------------</p>
     <input type="submit" value="Adicionar">
