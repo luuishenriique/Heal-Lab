@@ -22,21 +22,24 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <?php endif ?>
 
 <br>
-<legend class="leg_form">Informações sobre o professor</legend>
 <form class="form_info" action="add_prof.php" method="POST" style="text-align: center;">
 	<fieldset>
-		<input type="text" name="siape" placeholder="SIAPE">
-		<input type="text" name="professor" placeholder="Professor"><br>
-		<input type="text" name="email" placeholder="Email"><br>
+		<legend class="leg_form">Informações sobre o professor</legend>
+		<legend>SIAPE do professor</legend>
+		<input type="text" name="siape" placeholder="Ex: ABC123CB">
+		<legend>Nome do professor</legend>
+		<input type="text" name="professor" placeholder="Ex: Marcos Paulo"><br>
+		<legend>Email do professor</legend>
+		<input type="text" name="email" placeholder="Ex: paulo.marcos@gmail.com"><br>
 		<p>Disciplina:</p>
 		<select name="disc-prof">
-			<option value="" selected>Selecione a disciplina</option>
+			<option value="" selected disabled>Selecione a disciplina</option>
 			<option value="Informática">Informática</option>
 			<option value="Matemática">Matemática</option>
 		</select>
 		<p>--------------</p>
 		<input type="submit" value="Adicionar">
-		<input type="reset" value="Limpar">
+		<!-- <input type="reset" value="Limpar"> -->
 	</fieldset>
 </form>
 <br>
@@ -57,8 +60,8 @@ for ($i=0; $i < sizeof($dados); $i++) {
 			<?php endforeach  ?>
 			<td>
 				<a href="del_prof.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt">
-			</td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<?php include 'footer.php' ?>
+				</td>
+			</tr>
+		<?php endforeach ?>
+	</table>
+	<?php include 'footer.php' ?>
