@@ -2,10 +2,10 @@
 
 require 'config.php';
 
-$nome = trim($_POST['nome']);
-$email = trim($_POST['email']);
+$siape = trim($_POST['siape']);
+$senha = trim($_POST['senha']);
 
-if (!strlen($nome) || !strlen($email)) {
+if (!strlen($siape) || !strlen($senha)) {
     die('Preencha os campos');
 }
 
@@ -15,7 +15,7 @@ $handle = fopen("src/professores.csv", "r");
 
 while (($data = fgetcsv($handle)) == TRUE) {
 
-    if ($data[0] == $nome && $data[2] == $email) {
+    if ($data[0] == $siape && $data[2] == $senha) {
         $success = true;
         break;
     }
