@@ -229,7 +229,7 @@ h1, h2 {
     font-size: 20px;
 }
 
-input[type=text]{
+input[type=text], [type=password]{
     border: none;
     border-bottom: 2px solid #4CAF50;
     width: 100%;
@@ -238,10 +238,10 @@ input[type=text]{
     box-sizing: border-box;
 }
 
-input[type=text]:focus {
+/*input[type=text], [type=password]:focus {
   border: 3px solid #555;
 }
-
+*/
 input[type=time]{
   font-size: 16px;
 }
