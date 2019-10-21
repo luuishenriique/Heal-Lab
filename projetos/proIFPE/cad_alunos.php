@@ -20,25 +20,29 @@ for ($i = 0; $i < sizeof($dados); $i++) {
 <legend class="leg_form">Informações sobre o aluno</legend>
 <form class="form_info" action="add_aln.php" method="POST">
 	<fieldset>
-		<input type="text" name="matricula" placeholder="Matrícula">
-		<input type="text" name="aluno" placeholder="Nome do Aluno">
-		<input type="text" name="email" placeholder="Email do Aluno">
-		<p>Curso:</p>
+		<legend>Informações sobre o aluno</legend>
+		<legend>Matrícula do aluno</legend>
+		<input type="text" name="matricula" placeholder="Ex: 20172LOG3322" required>
+		<legend>Nome do aluno</legend>
+		<input type="text" name="aluno" placeholder="Ex: João da Silva" required>
+		<legend>Email do aluno</legend>
+		<input type="text" name="email" placeholder="Ex: joao.silva@outlook.com" required>
+		<p>Informe o curso:</p>
 		<select name="curso">
-			<option value="" selected>Selecione o curso</option>
+			<option value="" selected disabled>Selecione o curso</option>
 			<option value="Informática para internet">Informática para internet</option>
 			<option value="Logística">Logística</option>
 		</select>
-		<p>Disciplina:</p>
+		<p>Informe a disciplina:</p>
 		<select name="disciplina">
-			<option value="" selected>Selecione a disciplina</option>
+			<option value="" selected disabled>Selecione a disciplina</option>
 			<option value="Matemática">Matemática</option>
 			<option value="Informática">Informática</option>
 		</select>
 		<p>---------------------</p>
 		<!-- <input type="date" name="data" placeholder="Data de entrada"> -->
 		<input type="submit" value="Adicionar">
-		<input type="reset" value="Limpar">
+		<!-- <input type="reset" value="Limpar"> -->
 	</fieldset>
 </form>
 <br>
