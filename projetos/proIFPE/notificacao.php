@@ -17,12 +17,13 @@ for($i=0; $i <sizeof($dados); $i++){
 <?php endif ?>
 
 <br>
-<legend class="leg_form">Notificação</legend>
 <form class="form_info" action="add_not.php" method="POST" style="text-align: center;">
 	<fieldset>
-		<input type="text" name="nome" placeholder="Notificação"><br>
+		<legend class="leg_form">Campo de Notificação</legend>
+		<legend>Insira a sua notificação</legend>
+		<input type="text" name="nome" placeholder="Ex: Atividade valendo nota próxima aula."><br>
 		<input type="submit" value="Adicionar">
-		<input type="reset" value="Limpar">
+		<!-- <input type="reset" value="Limpar"> -->
 	</fieldset>
 </form>
 <br>
@@ -39,9 +40,9 @@ for($i=0; $i <sizeof($dados); $i++){
 			<?php endforeach ?>
 			<td>
 				<a href="del_not.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt">
-			</td>
-		</tr>
-	<?php endforeach ?>
-</table>
+				</td>
+			</tr>
+		<?php endforeach ?>
+	</table>
 </body>
 </html> 
