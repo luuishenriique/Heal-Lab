@@ -3,8 +3,9 @@ include 'config.php';
 
 $siape = $_POST['siape'];
 $nome = $_POST['professor'];
-$disciplina = $_POST['disc-prof']; 
 $email = $_POST['email'];
+$disciplina = $_POST['select-disciplina'];
+$disciplina_dt = trim($disciplina);
 
 if ($siape == false || $nome == false || $email == false || $disciplina == ""){
 	redicect("cad_professores.php?msg=Os campos precisam ser preenchidos");
