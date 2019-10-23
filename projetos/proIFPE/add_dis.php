@@ -14,11 +14,10 @@ $turma_dt = trim($turma);
 if($disciplina == false || $dia == false || $turno == false || $inicio == false || $termino == false || $turma == false){
 	redicect("cad_disciplinas.php?msg=Todos os campos precisam ser preenchidos!");
 } 
-$dados = join(",",[$disciplina,$dia,$turno,$inicio,$termino,$turma_dt])
+	$dados = join(",", [$disciplina,$dia,$turno,$inicio,$termino,$turma_dt]) . "\n";
 	$handle = fopen(DIS_FILE, 'a');
 	fwrite($handle,$dados);
 	fclose($handle);
 
 	redicect("cad_disciplinas.php?msg=Registro inserido com sucesso!");	
-}
 ?>
