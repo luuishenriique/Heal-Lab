@@ -6,6 +6,12 @@ include 'config.php';
 
 $dado = file(DIS_FILE);
 
+$dados_cdr = file(CDR_FILE);
+
+$dados_prof = file(PRO_FILE);
+
+$dados_curso = file(CUR_FILE);
+
 $dados = file(TUR_FILE); /*recebendo arquivos da tabela csv*/
 $turma = [];
 
@@ -26,12 +32,37 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <form class="form_info" action="add_tur.php" method="POST" style="text-align: center;">
 	<fieldset>
 		<input type="text" name="nturma" placeholder="Numero da turma">
-		<input type="text" name="curso" placeholder="Curso"><br>
+		<br>
+		<label>Informar curso:</label>
+		<select name="curso">
+			<option selected disabled value="">Selecione o curso:</option>
+			<?php foreach ($dados_curso as $cur): ?>
+				<option value="<?= $cur ?>"><?= $cur ?></option>
+			<?php endforeach ?>
+		</select>
+		<br>
 		<input type="text" name="alunos" placeholder="Quantidade de Alunos"><br>
-		<input type="text" name="email" placeholder="Email do professor"><br>
 		<p>--------------</p>
+		<label>Informar disciplina:</label>
+		<select name="select-cadeira">
+			<option selected disabled value="">Selecione a disciplina</option>
+			<?php foreach ($dados_cdr as $cdr): ?>
+				<option value="<?= $cdr ?>"><?= $cdr ?></option>
+			<?php endforeach ?>
+		</select>
+		<!-- <input type="text" name="email" placeholder="Email do professor"><br> -->
+		<br>
+		<br>
+		<label>Informar professor:</label>
+		<select name="select-professor">
+			<option selected disabled value="">Selecione o professor</option>
+			<?php foreach ($dados_prof as $cdr): ?>
+				<option value="<?=  $cdr ?>"><?=  $cdr ?></option>
+			<?php endforeach ?>
+		</select>
+		<br>
 		<input type="submit" value="Adicionar">
-		<input type="reset" value="Limpar">
+		<!-- <input type="reset" value="Limpar"> -->
 	</fieldset>
 </form>
 <br>
@@ -42,8 +73,9 @@ for ($i=0; $i < sizeof($dados); $i++) {
 		<th>Turma</th>
 		<th>Curso</th>
 		<th>Quantidade de alunos</th>
-		<th>Email do Professor</th>
-		<th>Apagar Professor</th>
+		<th>Disciplina</th>
+		<!-- <th>Professor</th> -->
+		<th>Apagar Dados</th>
 	</tr>
 	<?php foreach ($dados as $i => $dado): ?>
 		<tr>

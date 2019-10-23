@@ -4,6 +4,10 @@
 include 'header.php';
 include 'config.php';
 
+$dados_turma = file(TUR_FILE);
+$dados_cadeira = file(CDR_FILE);
+$dados_curso = file(CUR_FILE);
+
 $dados = file(ALN_FILE);
 for ($i = 0; $i < sizeof($dados); $i++) {
 	$dados[$i] = explode(',', $dados[$i]);
@@ -27,17 +31,30 @@ for ($i = 0; $i < sizeof($dados); $i++) {
 		<input type="text" name="aluno" placeholder="Ex: João da Silva" required>
 		<legend>Email do aluno</legend>
 		<input type="text" name="email" placeholder="Ex: joao.silva@outlook.com" required>
-		<p>Informe o curso:</p>
+		<label>Informe o curso:</label>
 		<select name="curso">
 			<option value="" selected disabled>Selecione o curso</option>
-			<option value="Informática para internet">Informática para internet</option>
-			<option value="Logística">Logística</option>
+			<?php foreach ($dados_curso as $cur): ?>
+				<option value="<?= $cur ?>"><?= $cur ?></option>
+			<?php endforeach ?>
 		</select>
-		<p>Informe a disciplina:</p>
+		<br>
+		<br>
+		<label>Informe a disciplina:</label>
 		<select name="disciplina">
 			<option value="" selected disabled>Selecione a disciplina</option>
-			<option value="Matemática">Matemática</option>
-			<option value="Informática">Informática</option>
+			<?php foreach ($dados_cadeira as $cdr): ?>
+				<option value="<?= $cdr ?>"><?= $cdr ?></option>
+			<?php endforeach ?>
+		</select>
+		<br>
+		<br>
+		<label>Informe a turma:</label>
+		<select name="turma">
+			<option value="" selected disabled>Selecione a turma</option>
+			<?php foreach ($dados_turma as $tur): ?>
+				<option value="<?= $tur ?>"><?= $tur ?></option>
+			<?php endforeach ?>
 		</select>
 		<p>---------------------</p>
 		<!-- <input type="date" name="data" placeholder="Data de entrada"> -->
