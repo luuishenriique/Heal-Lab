@@ -3,10 +3,14 @@
 <?php 
 include 'header.php';
 include 'config.php';
+?>
+
+<?php
 
 $dado = file(DIS_FILE);
 
-$dados = file(PRO_FILE); /*recebendo arquivos da tabela csv*/
+$dados = file(PRO_FILE);
+
 $professor = [];
 
 for ($i=0; $i < sizeof($dados); $i++) { 
@@ -31,12 +35,16 @@ for ($i=0; $i < sizeof($dados); $i++) {
 		<input type="text" name="professor" placeholder="Ex: Marcos Paulo"><br>
 		<legend>Email do professor</legend>
 		<input type="text" name="email" placeholder="Ex: paulo.marcos@gmail.com"><br>
-		<p>Disciplina:</p>
-		<select name="disc-prof">
-			<option value="" selected disabled>Selecione a disciplina</option>
-			<option value="Informática">Informática</option>
-			<option value="Matemática">Matemática</option>
-		</select>
+
+     	<div>
+    	<legend>Disciplina</legend>
+    	<select type="text" name="select-disciplina">
+        <?php foreach($dado as $dd): ?>
+            <option value="<? $dd ?>"><?= trim($dd) ?></option>
+        <?php endforeach ?>
+      	</select>
+    	</div>
+
 		<p>--------------</p>
 		<input type="submit" value="Adicionar">
 		<!-- <input type="reset" value="Limpar"> -->
@@ -52,16 +60,20 @@ for ($i=0; $i < sizeof($dados); $i++) {
 		<th>Disciplina</th>
 		<th>Email</th>
 		<th>Apagar Professor</th>
+		<th>Editar</th>
 	</tr>
 	<?php foreach ($dados as $i => $dado): ?>
 		<tr>
 			<?php foreach ($dado as $dados): ?>
 				<td><?= $dados ?></td>
 			<?php endforeach  ?>
-			<td>
-				<a href="del_prof.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt">
-				</td>
-			</tr>
+    <td>
+      <a href="del_prof.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt"></i>
+      </td>
+      <td>
+        <a href="edi_prof.php?linha=<?= $id ?>" class="btn"><i class="far fa-edit"></i></a>
+      </td>
+    </tr>
 		<?php endforeach ?>
 	</table>
 	<?php include 'footer.php' ?>
