@@ -1,10 +1,38 @@
-	<title>proIFPE - Campus Igarassu</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Sintony&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="img/5235fav.ico">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+<body>
+<style type="text/css">
 	
-	<?php include "header.php" ?>
-	<h1>ProIFPE - Campus Igarassu</h1>
-	<p>Sistema de dados para o ProIFPE</p>
+.main-a{
+ color:white;
 
-	<h2><a href="cadastro.php" style="text-align: center;">CADASTRO</a></h2>
-	<h2><a href="login_teacher.php" style="text-align: center;">LOGIN PROFESSOR</a></h2>
-	<h2><a href="login_student.php" style="text-align: center;">LOGIN ALUNO</a></h2>
+}
+</style>
+
+	<div class="header">
+		<span id="nome">IFPE</span>
+		<h1 class="logo">Instituto Federal de Pernambuco</h1>
+		<span id="nome-1">ProIFPE - Campus Igarassu</span>
+	</div>
+	
+	<h1>ProIFPE - Campus Igarassu</h1>
+	
+<div class="main">
+	<a id="main-a" href="#">
+	LOGIN
+</a>
+	<a id="main-a" href="cadastro.php" style="border-top-width: 0px; border-top-style: 25px; margin-top: 10px;">
+		CADASTRO
+	</a>
+
+
+</div>
 	<?php include 'footer.php' ?>
