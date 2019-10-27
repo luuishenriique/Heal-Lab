@@ -1,4 +1,4 @@
-<title>Horário</title>
+<title>proIFPE::Horário</title>
 
 <?php include "header.php"; ?>
 <h1>Horários</h1>

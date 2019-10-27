@@ -1,4 +1,4 @@
-<title>Cadastro de Aulas</title>
+<title>proIFPE::Cadastro de Aulas</title>
 
 <?php 
 include "header.php";

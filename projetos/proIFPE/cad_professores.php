@@ -1,4 +1,4 @@
-<title>Cadastro de Professores</title>
+<title>proIFPE::Cadastro de Professores</title>
 
 <?php 
 include 'header.php';

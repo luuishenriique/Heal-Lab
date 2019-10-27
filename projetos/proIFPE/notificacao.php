@@ -1,4 +1,4 @@
-<title>Notificações</title>
+<title>proIFPE::Notificações</title>
 
 <?php
 include 'header.php';

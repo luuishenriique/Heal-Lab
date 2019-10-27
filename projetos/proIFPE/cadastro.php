@@ -1,4 +1,4 @@
-<title>Cadastro</title>
+<title>proIFPE::Cadastro</title>
 
 <?php 
 include "header.php";

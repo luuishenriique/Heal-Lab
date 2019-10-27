@@ -1,4 +1,4 @@
-<title>Cadastro de Turmas</title>
+<title>proIFPE::Cadastro de Turmas</title>
 
 <?php 
 include 'header.php';

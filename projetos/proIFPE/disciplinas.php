@@ -1,4 +1,4 @@
-<title>Professores</title>
+<title>proIFPE::Professores</title>
 
 <?php include "header.php" ?>
 

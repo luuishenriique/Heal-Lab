@@ -1,4 +1,4 @@
-	<title>Sobre</title>
+	<title>proIFPE::Sobre</title>
 
 	<?php include "header.php" ?>
 	

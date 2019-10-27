@@ -23,7 +23,7 @@
 		<span id="nome-1">ProIFPE - Campus Igarassu</span>
 	</div>
 
-<title>proIFPE-Igarassu</title>
+<title>proIFPE::Igarassu</title>
 	<h1>ProIFPE - Campus Igarassu</h1>
 	
 <div class="main">
