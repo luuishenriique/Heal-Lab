@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+	<title>Login</title>
 	<div class="header">
 		<span id="nome">IFPE</span>
 		<h1 class="logo">Instituto Federal de Pernambuco</h1>
@@ -25,16 +25,18 @@
 </label>
 
 </div>
-<form class="form_info" method="post" action="#">
+<br>
+<form class="form_info" method="POST" action="#">
 	<fieldset>
-		<legend>Login</legend>
+		<legend>Área de Login</legend>
 		<legend>Matrícula</legend>
-		<input type="text" name="matricula" placeholder="Ex: 20191INFIG0001">
+		<input type="text" name="matricula" placeholder="Ex: 20191INFIG0001" required>
 		<legend>Senha</legend>
-		<input type="password" name="senha" placeholder="Ex: Log131704">
+		<input type="password" name="senha" placeholder="Ex: Log131704" required>
 		<input type="submit" value="Login">
+		<p>Primeiro login? <br> <a href="att_nuser.php">Habilite seus dados aqui!</a></p>
 	</fieldset>
 </form>
 
 </div>
-	
+
