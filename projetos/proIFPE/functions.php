@@ -39,6 +39,7 @@ function loggedOK(){
 
 function logOut(){
 	$_SESSION['logado'] = false;
+	$_SESSION['type_id'] = false;
 	session_destroy();
 	redirect('login.php');
 }
