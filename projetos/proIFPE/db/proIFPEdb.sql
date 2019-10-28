@@ -42,7 +42,7 @@ CREATE TABLE `Alunos` (
 
 LOCK TABLES `Alunos` WRITE;
 /*!40000 ALTER TABLE `Alunos` DISABLE KEYS */;
-INSERT INTO `Alunos` VALUES (1,'Luis Henrique Chaves de Oliveira','20191INFIG0201','luuisaranhaa@gmail.com','lghFqNRvZ/mA2',3);
+INSERT INTO `Alunos` VALUES (1,'Luis Henrique Chaves de Oliveira','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3);
 /*!40000 ALTER TABLE `Alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ DROP TABLE IF EXISTS `Professores`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Professores` (
   `id_prof` int(11) NOT NULL AUTO_INCREMENT,
-  `siape_prof` int(7) NOT NULL,
+  `siape_prof` varchar(15) DEFAULT NULL,
   `name_prof` varchar(150) NOT NULL,
   `email_prof` varchar(50) DEFAULT NULL,
   `password_prof` varchar(50) DEFAULT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `Professores` (
 
 LOCK TABLES `Professores` WRITE;
 /*!40000 ALTER TABLE `Professores` DISABLE KEYS */;
-INSERT INTO `Professores` VALUES (10000,1234567,'João Kleber Para Para',NULL,NULL,2);
+INSERT INTO `Professores` VALUES (10000,'1234567','João Kleber Para Para','parapara@gmail.com','lglG.QxZgvFNA',2);
 /*!40000 ALTER TABLE `Professores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +202,7 @@ CREATE TABLE `Usuarios` (
 
 LOCK TABLES `Usuarios` WRITE;
 /*!40000 ALTER TABLE `Usuarios` DISABLE KEYS */;
-INSERT INTO `Usuarios` VALUES (1,'Administrador'),(2,'Professor'),(3,'Aluno');
+INSERT INTO `Usuarios` VALUES (1,'Administrador(a)'),(2,'Professor(a)'),(3,'Aluno(a)');
 /*!40000 ALTER TABLE `Usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -215,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-26 23:38:19
+-- Dump completed on 2019-10-27 22:28:58
