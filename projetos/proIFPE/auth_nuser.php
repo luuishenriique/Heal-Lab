@@ -1,0 +1,110 @@
+<?php 
+require 'config.php';
+
+$dados = $_POST['user_data'] ?? false;
+$email = $_POST['email'] ?? false;
+$senha = $_POST['senha'] ?? false;
+$conf_senha = $_POST['conf_senha'] ?? false;
+$adm_senha = $_POST['adm_senha'] ?? false;
+
+echo $dados;
+echo $email; 
+
+if ($senha !== $conf_senha) {
+	redirect('att_nuser.php?msg=Senhas não são iguais!');
+	exit();
+} else {
+	$bau_senha = $senha;
+	$senha = cryptPass($senha);
+	echo $senha;
+}
+
+if ($adm_senha !== ADM_SENHA) {
+	redirect('att_nuser.php?msg=Senha do administrador incorreta!');
+	echo $adm_senha;
+	echo ADM_SENHA;
+	exit();
+}
+
+if (strlen($dados) > 7) {
+
+	echo 'MATRÍCULA';	
+	$dados = strtoupper($dados);
+
+	$PDO = dbConnect();
+
+	$sql = "SELECT mat_aluno FROM Alunos WHERE mat_aluno = :matricula";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':matricula', $dados);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('auth_nuser.php');
+		echo 'Achei nada!';
+		exit();
+	}
+
+	$PDO = dbConnect();
+
+	$sql = "UPDATE Alunos SET email_aluno = :email, password_aluno = :senha WHERE mat_aluno = :matricula";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':senha', $senha);
+	$stmt->bindParam(':matricula', $dados);
+
+	$stmt->execute();
+
+	redirect('login.php');
+	echo 'Consegui!';
+	exit();
+
+}
+
+if (strlen($dados) <= 7) {
+
+	echo 'SIAPE';	
+
+	$PDO = dbConnect();
+
+	$sql = "SELECT siape_prof FROM Professores WHERE siape_prof = :siape";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':siape', $dados);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('auth_nuser.php');
+		echo 'Achei nada!';
+		exit();
+	}
+
+	$PDO = dbConnect();
+
+	$sql = "UPDATE Professores SET email_prof = :email, password_prof = :senha WHERE siape_prof = :siape";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':senha', $senha);
+	$stmt->bindParam(':siape', $dados);
+
+	$stmt->execute();
+
+	redirect('login.php');
+	echo 'Consegui!';
+
+}
+?> 
