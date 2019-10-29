@@ -7,6 +7,25 @@ require 'config.php';
 
 $PDO = dbConnect();
 
+if ($_SESSION['type_id'] == 1) {
+	$sql = "SELECT * FROM Administradores WHERE id_adm = :id";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':id', $_SESSION['user_id']);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	// var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('my_data.php');
+		echo 'Achei nada!';
+		exit();
+	}
+}
+
 if ($_SESSION['type_id'] == 2) {
 	$sql = "SELECT * FROM Professores WHERE id_prof = :id";
 
@@ -51,6 +70,13 @@ if ($_SESSION['type_id'] == 3) {
 <br>
 <table>
 	<thead>
+		<?php if ($_SESSION['type_id'] == 1): ?>
+			<th>Login</th>
+			<th>Nome completo</th>
+			<th>Email de contato</th>
+			<th>Tipo de usuário</th>
+			<th>Ações</th>
+		<?php endif ?>
 		<?php if ($_SESSION['type_id'] == 2): ?>
 			<th>SIAPE</th>
 			<th>Nome completo</th>
@@ -67,6 +93,22 @@ if ($_SESSION['type_id'] == 3) {
 		<?php endif ?>
 	</thead>
 	<tbody>
+		<?php if ($_SESSION['type_id'] == 1): ?>
+		<?php foreach ($linhas as $id => $linha): ?>
+			<tr>
+				<td><?= $linhas[$id]['login_adm'] ?></td>
+				<td><?= $linhas[$id]['name_adm'] ?></td>
+				<td><?= $linhas[$id]['email_adm'] ?></td>
+				<td><?= 'Administrador' ?></td>
+				<td>
+					<nav>
+						<a href="">&#133;</a> |
+						<a href="">&times;</a>
+					</nav>
+				</td>
+			</tr>
+		<?php endforeach ?>	
+		<?php endif ?>
 		<?php if ($_SESSION['type_id'] == 2): ?>
 		<?php foreach ($linhas as $id => $linha): ?>
 			<tr>
