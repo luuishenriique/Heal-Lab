@@ -9,7 +9,45 @@ var_dump($dados);
 $senha = cryptPass($senha);
 var_dump($senha);
 
-if (strlen($dados) <= 7) {
+if (strlen($dados) < 7) {
+
+	echo 'ADMINISTRADOR';	
+	
+	$PDO = dbConnect();
+
+	$sql = "SELECT * FROM Administradores WHERE login_adm = :login AND password_adm = :password";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':login', $dados);
+	$stmt->bindParam(':password', $senha);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('login.php');
+		echo 'Achei nada!';
+		exit();
+	}
+
+	$dado = $linhas[0];
+
+	session_start();
+	loggedOK();
+	$_SESSION['user_id'] = $dado['id_adm'];
+	$_SESSION['user_data'] = $dado['login_adm'];
+	$_SESSION['user_name'] = $dado['name_adm'];
+	$_SESSION['type_id'] = $dado['id_user'];
+	$tipo = $_SESSION['type_id'];
+
+	redirect('home.php');
+	echo 'Consegui!';
+}
+
+if (strlen($dados) == 7) {
 
 	echo 'SIAPE';	
 	
