@@ -1,4 +1,4 @@
-<title>proIFPE::Cadastro de Aulas</title>
+<title>proIFPE::Cadastro de Disciplinas</title>
 
 <?php 
 include "header.php";
@@ -6,101 +6,63 @@ include "config.php";
 ?>
 
 <?php
-$dado = file(TUR_FILE);
+// $dado = file(TUR_FILE);
 
-$dados = file(DIS_FILE);
+// $dados = file(DIS_FILE);
 
-$disciplina = [];
+// $disciplina = [];
 
-for ($i=0; $i < sizeof($dados); $i++) {
-  $dados[$i] = explode(',', $dados[$i]);
-} 
+// for ($i=0; $i < sizeof($dados); $i++) {
+//   $dados[$i] = explode(',', $dados[$i]);
+// } 
+
+session_start();
+
+$PDO = dbConnect();
+
+$sql = "SELECT * FROM Disciplinas";
+
+$stmt = $PDO->prepare($sql);
+
+$stmt->execute();
+
+$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($linhas);
+
+if (count($linhas) <= 0) {
+  // redirect('cad_disciplinas.php');
+  echo 'Info::Achei nada!';
+  exit();
+}
 ?>
-
-<?php if (!empty($_GET['msg'])): ?>
-  <div class="msg_info">
-    <h3><?= $_GET['msg'] ?></h3>
-  </div>
-<?php endif ?>
-
 <br>
-<legend class="leg_form">Cadastro de Aula</legend>
-<form class="form_info" action="add_dis.php" method="POST" style="text-align: center;">
-  <fieldset>
-    <legend>Dados da aula</legend>
-    <!-- <input type="text" name="disciplina" required="" placeholder="Disciplina"><br>
-    <input type="text" name="dia" placeholder="Dia"><br>
-    <input type="text" name="horario" placeholder="Horário"><br> -->
-    <p>Infome a disciplina:</p>
-    <select name="disciplina">
-      <option value="" selected disabled>Selecione a disciplina</option>
-      <option value="Informática">Informática</option>
-      <option value="Matemática">Matemática</option>
-    </select>
-    <p>Informe o dia:</p>
-    <select name="dia">
-      <option value="" selected disabled>Selecione o dia da semana</option>
-      <option value="Segunda">Segunda</option>
-      <option value="Terça">Terça</option>
-      <option value="Quarta">Quarta</option>
-      <option value="Quinta">Quinta</option>
-      <option value="Sexta">Sexta</option>
-    </select>
-    <p>informe o turno:</p>
-    <select name="turno">
-      <option value="" selected disabled>Selecione o turno</option>
-      <option value="Manhã">Manhã</option>
-      <option value="Tarde">Tarde</option>
-    </select>
-    <p>-----------------</p>
-    <div>
-    <legend>Horário de início</legend>
-    <input type="time" name="inicio">
-    <br>
-    <br>
-    <legend>Horário de término</legend>
-    <input type="time" name="termino">
-    </div>
-     <p>-----------------</p>
-     <div>
-    <legend>Turma</legend>
-    <select type="text" name="select-turma">
-       <?php foreach($dado as $dd): ?>
-            <option value="<? $dd ?>"><?= trim($dd[0]) ?></option>
-        <?php endforeach ?>
-      </select>
-    </div>
-    <p>-----------------</p>
-    <input type="submit" value="Adicionar">
-    <!-- <input type="reset" value="Limpar"> -->
-  </fieldset>
-</form>
-<br>
-<h2>Aulas cadastradas</h2>
+<h2>Disciplinas cadastradas</h2>
 <br>
 <table>
-  <tr>
-    <th>Disciplina</th>
-    <th>Dia</th>
-    <th>Turno</th>
-    <th>Hora início</th>
-    <th>Hora término</th>
-    <th>Remover Disciplina</th>
-    <th>Editar</th>
-  </tr>
-
-  <?php foreach ($dados as $i => $dado):?>
-   <tr>
-     <?php foreach ($dado as $dados): ?>
-      <td><?= $dados ?></td>
-    <?php endforeach?>
-    <td>
-      <a href="del_dis.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt"></i>
-      </td>
-      <td>
-        <a href="edi_dis.php?linha=<?= $id ?>" class="btn"><i class="far fa-edit"></i></a>
-      </td>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Disciplina</th>
+      <th>Descrição</th>
+      <th>Ações</th>
     </tr>
-  <?php endforeach ?>
+  </thead>
+  <tbody>
+    <?php foreach ($linhas as $id => $linha): ?>
+      <tr>
+        <td><?= $linhas[$id]['id_disc'] ?></td>
+        <td><?= $linhas[$id]['name_disc'] ?></td>
+        <td><?= $linhas[$id]['desc_disc'] ?></td>
+        <td>
+          <nav>
+            <a href="">&#133;</a>
+            <a href="">&times;</a>
+          </nav>
+        </td>
+      </tr>
+    <?php endforeach ?>
+  </tbody>
 </table>
+<br>
+<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
 <?php include 'footer.php' ?>
