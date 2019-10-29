@@ -26,6 +26,86 @@ if ($adm_senha !== ADM_SENHA) {
 	exit();
 }
 
+if (strlen($dados) < 7) {
+
+	echo 'ADMNISTRADOR';	
+
+	$PDO = dbConnect();
+
+	$sql = "SELECT login_adm FROM Administradores WHERE login_adm = :login";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':login', $dados);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('auth_nuser.php');
+		echo 'Achei nada!';
+		exit();
+	}
+
+	$PDO = dbConnect();
+
+	$sql = "UPDATE Administradores SET email_adm = :email, password_adm = :senha WHERE login_adm = :login";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':senha', $senha);
+	$stmt->bindParam(':login', $dados);
+
+	$stmt->execute();
+
+	redirect('login.php');
+	echo 'Consegui!';
+
+}
+
+if (strlen($dados) == 7) {
+
+	echo 'SIAPE';	
+
+	$PDO = dbConnect();
+
+	$sql = "SELECT siape_prof FROM Professores WHERE siape_prof = :siape";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':siape', $dados);
+
+	$stmt->execute();
+
+	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($linhas);
+
+	if (count($linhas) <= 0) {
+		redirect('auth_nuser.php');
+		echo 'Achei nada!';
+		exit();
+	}
+
+	$PDO = dbConnect();
+
+	$sql = "UPDATE Professores SET email_prof = :email, password_prof = :senha WHERE siape_prof = :siape";
+
+	$stmt = $PDO->prepare($sql);
+
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':senha', $senha);
+	$stmt->bindParam(':siape', $dados);
+
+	$stmt->execute();
+
+	redirect('login.php');
+	echo 'Consegui!';
+
+}
+
 if (strlen($dados) > 7) {
 
 	echo 'MATRÍCULA';	
@@ -65,46 +145,6 @@ if (strlen($dados) > 7) {
 	redirect('login.php');
 	echo 'Consegui!';
 	exit();
-
-}
-
-if (strlen($dados) <= 7) {
-
-	echo 'SIAPE';	
-
-	$PDO = dbConnect();
-
-	$sql = "SELECT siape_prof FROM Professores WHERE siape_prof = :siape";
-
-	$stmt = $PDO->prepare($sql);
-
-	$stmt->bindParam(':siape', $dados);
-
-	$stmt->execute();
-
-	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('auth_nuser.php');
-		echo 'Achei nada!';
-		exit();
-	}
-
-	$PDO = dbConnect();
-
-	$sql = "UPDATE Professores SET email_prof = :email, password_prof = :senha WHERE siape_prof = :siape";
-
-	$stmt = $PDO->prepare($sql);
-
-	$stmt->bindParam(':email', $email);
-	$stmt->bindParam(':senha', $senha);
-	$stmt->bindParam(':siape', $dados);
-
-	$stmt->execute();
-
-	redirect('login.php');
-	echo 'Consegui!';
 
 }
 ?> 
