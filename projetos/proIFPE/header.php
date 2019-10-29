@@ -1,6 +1,6 @@
 <?php 
 require 'config.php';
-$tipo = $_SESSION['type_id'] ?? 1;
+$tipo = $_SESSION['type_id'] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ $tipo = $_SESSION['type_id'] ?? 1;
 	<div id="sobre">
 	</label>
 	<ul class="menu">
-		<?php if ($_SESSION['type_id'] == 1): ?>
+		<?php if ($tipo == 1): ?>
 			<strong><?= 'ADMINISTRADOR' ?></strong>
 			<a href="logout.php">Sair</a>
 			<a href="disciplinas.php">Apresentação</a>
@@ -31,7 +31,7 @@ $tipo = $_SESSION['type_id'] ?? 1;
 			<a href="notificacao.php">Notificação</a>
 			<a href="sobre.php">Sobre</a>
 		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 2): ?>
+		<?php if ($tipo == 2): ?>
 			<strong><?= 'PROFESSOR' ?></strong>
 			<a href="logout.php">Sair</a>
 			<a href="disciplinas.php">Apresentação</a>
@@ -41,7 +41,7 @@ $tipo = $_SESSION['type_id'] ?? 1;
 			<a href="notificacao.php">Notificação</a>
 			<a href="sobre.php">Sobre</a>
 		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 3): ?>
+		<?php if ($tipo == 3): ?>
 			<strong><?= 'ALUNO' ?></strong>
 			<a href="logout.php">Sair</a>
 			<a href="disciplinas.php">Apresentação</a>
@@ -51,7 +51,7 @@ $tipo = $_SESSION['type_id'] ?? 1;
 			<a href="notificacao.php">Notificação</a>
 			<a href="sobre.php">Sobre</a>
 		<?php endif ?>
-		<?php if (is_null($_SESSION['type_id'])): ?>
+		<?php if (is_null($tipo)): ?>
 			<strong>| <?= 'VISITANTE' ?> |</strong>
 			<a href="index.php">Início</a> | 
 			<a href="disciplinas.php">Apresentação</a> |
