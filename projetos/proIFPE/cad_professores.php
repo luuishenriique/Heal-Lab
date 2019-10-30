@@ -56,17 +56,26 @@ if (count($linhas) <= 0) {
 		<tr>
 			<td><?= $linhas[$id]['siape_prof'] ?></td>
 			<td><?= $linhas[$id]['name_prof'] ?></td>
-			<td><?= $linhas[$id]['email_prof'] ?></td>
-			<td><?= $linhas[$id]['id_user'] ?></td>
-			<td>
-				<nav>
-					<a href="">&#133;</a> |
-					<a href="">&times;</a>
-				</nav>
-			</td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<br>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
-<?php include 'footer.php' ?>
+			<?php if (is_null($linhas[$id]['email_prof'])): ?>
+				<td style="background-color: yellow; width: 50%; margin: auto;">
+					<?= "Aguardando validação de usuário" ?>
+				</td>
+				<?php else: ?>
+					<td>
+						<?= $linhas[$id]['email_prof'] ?>
+					</td>
+				<?php endif ?>
+				<td><?= $linhas[$id]['id_user'] ?></td>
+				<td>
+					<nav>
+						<a href="">&#133;</a> |
+						<a href="">&times;</a>
+					</nav>
+				</td>
+			</tr>
+		<?php endforeach ?>
+	</table>
+	<br>
+	<h3 style="text-align: center;"><a href="form_prof.php">Adicionar novo professor</a></h3>
+	<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+	<?php include 'footer.php' ?>

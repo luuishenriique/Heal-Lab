@@ -30,11 +30,14 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($linhas);
 
 if (count($linhas) <= 0) {
-  // redirect('cad_disciplinas.php');
+  // redirect('cad_disciplinas.php?msg=Achei nada!'); loop de redirecionamentos
   echo 'Info::Achei nada!';
-  exit();
+  // exit();
 }
 ?>
+<?php if (!isset($_GET['msg'])): ?>
+  <?= $_GET['msg'] ?>
+<?php endif ?>
 <br>
 <h2>Disciplinas cadastradas</h2>
 <br>
@@ -55,7 +58,7 @@ if (count($linhas) <= 0) {
         <td><?= $linhas[$id]['desc_disc'] ?></td>
         <td>
           <nav>
-            <a href="">&#133;</a>
+            <a href="">&#133;</a> |
             <a href="">&times;</a>
           </nav>
         </td>
@@ -64,5 +67,6 @@ if (count($linhas) <= 0) {
   </tbody>
 </table>
 <br>
+<h3 style="text-align: center;"><a href="form_dis.php">Adicionar nova disciplina</a></h3>
 <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
 <?php include 'footer.php' ?>

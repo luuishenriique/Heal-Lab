@@ -47,17 +47,26 @@ if (count($linhas) <= 0) {
 			<td><?= $linhas[$id]['id_adm'] ?></td>
 			<td><?= $linhas[$id]['name_adm'] ?></td>
 			<td><?= $linhas[$id]['login_adm'] ?></td>
-			<td><?= $linhas[$id]['email_adm'] ?></td>
-			<td><?= $linhas[$id]['id_user'] ?></td>
-			<td>
-				<nav>
-					<a href="">&#133;</a> |
-					<a href="">&times;</a>
-				</nav>
-			</td>
-		</tr>
-	<?php endforeach ?>
-</table>
-<br>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
-<?php include 'footer.php' ?>
+			<?php if (is_null($linhas[$id]['email_adm'])): ?>
+				<td style="background-color: yellow; width: 50%; margin: auto;">
+					<?= "Aguardando validação de usuário" ?>
+				</td>
+				<?php else: ?>
+					<td>
+						<?= $linhas[$id]['email_adm'] ?>
+					</td>
+				<?php endif ?>
+				<td><?= $linhas[$id]['id_user'] ?></td>
+				<td>
+					<nav>
+						<a href="">&#133;</a> |
+						<a href="">&times;</a>
+					</nav>
+				</td>
+			</tr>
+		<?php endforeach ?>
+	</table>
+	<br>
+	<h3 style="text-align: center;"><a href="form_adm.php">Adicionar novo administrador</a></h3>
+	<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+	<?php include 'footer.php' ?>
