@@ -20,9 +20,9 @@ a:visited {
 }
 
 a:hover {
-  color: #c0392b; 
-  transition: 0.4s;
-  background-color: #7f8fa6;
+  color: black; 
+  transition: 0.8s;
+  /*background-color: #7f8fa6;*/
 }
 
 
@@ -58,6 +58,12 @@ h1, h2 {
   font-family: 'Sintony', sans-serif;
   border-bottom: none;
 
+}
+
+.link-exit:hover{
+  color: red; 
+  transition: 0.4s;
+  background-color: #7f8fa6;
 }
 
 /*p, li {
@@ -260,10 +266,19 @@ h1, h2 {
   text-decoration: none;
   padding: 0 10px;
   transition: 0.4s;
+  font-size: 15px;
 
 }
 
-.menu a:hover{background-color: #357E2A;}
+.user-id{
+  background-color: #007f00;
+  padding: 0 10px;
+  font-size: 15px;
+  border-radius: 0px 5px;
+  color: #001900;
+}
+
+.menu a:hover{background-color: green;}
 
 .msg_info{
   text-align: center;
