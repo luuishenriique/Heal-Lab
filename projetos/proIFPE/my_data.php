@@ -1,6 +1,6 @@
 <?php 
-include 'header.php';
 session_start();
+include 'header.php';
 isLoggedIn();
 $tipo = $_SESSION['type_id'] ?? 0;
 require 'config.php';
@@ -102,8 +102,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Administrador' ?></td>
 				<td>
 					<nav>
-						<a href="">&#133;</a> |
-						<a href="">&times;</a>
+						<a href="">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
@@ -118,8 +117,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Professor' ?></td>
 				<td>
 					<nav>
-						<a href="">&#133;</a> |
-						<a href="">&times;</a>
+						<a href="">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
@@ -134,8 +132,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Aluno' ?></td>
 				<td>
 					<nav>
-						<a href="">&#133;</a> |
-						<a href="">&times;</a>
+					<a href="">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
