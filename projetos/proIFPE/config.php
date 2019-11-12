@@ -7,6 +7,7 @@ if (!defined('DB_PASS')) define('DB_PASS', $db_password);
 if (!defined('DB_NAME')) define('DB_NAME', $db_name);
 if (!defined('DB_PORT')) define('DB_PORT', $db_port);
 if (!defined('ADM_SENHA')) define('ADM_SENHA', $senha_adm);
+if (!defined('KEY_WORDS')) define('KEY_WORDS', $words);
 
 if(!defined('PRO_FILE')) define('PRO_FILE', 'src/professores.csv');
 if(!defined('DIS_FILE')) define('DIS_FILE', 'src/disciplinas.csv');
