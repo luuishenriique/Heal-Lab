@@ -1,6 +1,7 @@
 <?php 
 require 'config.php';
 include 'header.php';
+$a = "";
 ?>
 <title>Liberar usuário</title>
 </div>
@@ -16,8 +17,12 @@ include 'header.php';
 		<input type="password" name="senha" required>
 		<legend>Confirme a Senha</legend>
 		<input type="password" name="conf_senha" required>
-		<legend>Senha do Administrador</legend>
-		<input type="password" name="adm_senha" required>
+		<label>Palavra-Chave: <?= $b = randomWord($a); ?></label>
+		<br>
+		<label></label>
+		<br>
+		<legend>Confirme a palavra-chave</legend>
+		<input type="text" name="vkeyword" required>
 		<input type="submit" value="Atualizar dados">
 	</fieldset>
 </form>
