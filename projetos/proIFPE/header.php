@@ -19,47 +19,47 @@ $tipo = $_SESSION['type_id'] ?? null;
 		<span id="nome-1">ProIFPE - Campus Igarassu</span>
 	</div>
 	<div id="sobre">
-	</label>
+	<!-- </label> -->
 	<ul class="menu">
 		<?php if ($tipo == 1): ?>
-			<strong><?= 'ADMINISTRADOR' ?></strong>
-			<a href="logout.php">Sair</a>
-			<a href="disciplinas.php">Apresentação</a>
-			<a href="horario.php">Horário</a>
-			<a href="cadastro.php">Cadastro</a>
-			<a href="cad_turmas.php">Turmas</a>
-			<a href="notificacao.php">Notificação</a>
-			<a href="sobre.php">Sobre</a>
+			<strong class="user-id"><?= '| ADMINISTRADOR |' ?></strong>
+			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="disciplinas.php">| Apresentação |</a>
+			<a href="horario.php">| Horário |</a>
+			<a href="cadastro.php">| Cadastro |</a>
+			<a href="cad_turmas.php">| Turmas |</a>
+			<a href="notificacao.php">| Notificação |</a>
+			<a href="sobre.php">| Sobre |</a>
 		<?php endif ?>
 		<?php if ($tipo == 2): ?>
-			<strong><?= 'PROFESSOR' ?></strong>
-			<a href="logout.php">Sair</a>
-			<a href="disciplinas.php">Apresentação</a>
-			<a href="horario.php">Horários</a>
-			<a href="cadastro.php" hidden>Cadastro</a>
-			<a href="cad_turmas.php">Turmas</a>
-			<a href="notificacao.php">Notificação</a>
-			<a href="sobre.php">Sobre</a>
+			<strong class="user-id"><?= '| PROFESSOR |' ?></strong>
+			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="disciplinas.php">| Apresentação |</a>
+			<a href="horario.php">| Horários |</a>
+			<a href="cadastro.php" hidden>| Cadastro |</a>
+			<a href="cad_turmas.php">| Turmas |</a>
+			<a href="notificacao.php">| Notificação |</a>
+			<a href="sobre.php">| Sobre |</a>
 		<?php endif ?>
 		<?php if ($tipo == 3): ?>
-			<strong><?= 'ALUNO' ?></strong>
-			<a href="logout.php">Sair</a>
-			<a href="disciplinas.php">Apresentação</a>
-			<a href="horario.php">Horários</a>
-			<a href="cadastro.php" hidden>Cadastro</a>
-			<a href="cad_turmas.php" hidden>Turmas</a>
-			<a href="notificacao.php">Notificação</a>
-			<a href="sobre.php">Sobre</a>
+			<strong class="user-id"><?= '| ALUNO |' ?></strong>
+			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="disciplinas.php">| Apresentação |</a>
+			<a href="horario.php">| Horários |</a>
+			<a href="cadastro.php" hidden>| Cadastro |</a>
+			<a href="cad_turmas.php" hidden>| Turmas |</a>
+			<a href="notificacao.php">| Notificação |</a>
+ 			<a href="sobre.php">| Sobre |</a>
 		<?php endif ?>
 		<?php if (is_null($tipo)): ?>
-			<strong>| <?= 'VISITANTE' ?> |</strong>
-			<a href="index.php">Início</a> | 
-			<a href="disciplinas.php">Apresentação</a> |
-			<a href="horario.php">Horários</a> |
-			<a href="cadastro.php" hidden>Cadastro</a>
-			<a href="cad_turmas.php" hidden>Turmas</a>
-			<a href="notificacao.php" hidden>Notificação</a>
-			<a href="sobre.php">Sobre</a> |	
+			<strong class="user-id"><?= '| VISITANTE |' ?></strong>
+			<a class="link-exit" href="logout.php" hidden>| Sair |</a>
+			<a href="disciplinas.php">| Apresentação |</a>
+			<a href="horario.php">| Horários |</a>
+			<a href="cadastro.php" hidden>| Cadastro |</a>
+			<a href="cad_turmas.php" hidden>| Turmas |</a>
+			<a href="notificacao.php" hidden>| Notificação |</a>
+ 			<a href="sobre.php">| Sobre |</a>	
 		<?php endif ?>	
 	</ul>
 </label>
