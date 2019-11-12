@@ -26,6 +26,16 @@ function cryptPass($str){
 	return crypt($str,'lg');
 }
 
+function randomWord($var){
+
+	$n = rand(0,sizeof(KEY_WORDS));
+
+	$var = KEY_WORDS[$n];
+
+	echo $var;
+
+}
+
 function isLoggedIn(){
 	if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 		redirect('login.php');
