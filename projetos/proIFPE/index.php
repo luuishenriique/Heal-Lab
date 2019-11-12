@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-
+<?php require 'config.php'; ?>
 <title>proIFPE::Igarassu</title>
 <h1>ProIFPE - Campus Igarassu</h1>
 
