@@ -16,36 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Administradores`
---
-
-DROP TABLE IF EXISTS `Administradores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Administradores` (
-  `id_adm` int(11) NOT NULL AUTO_INCREMENT,
-  `name_adm` varchar(50) NOT NULL,
-  `email_adm` varchar(50) DEFAULT NULL,
-  `password_adm` varchar(50) DEFAULT NULL,
-  `id_user` int(11) NOT NULL,
-  `login_adm` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_adm`),
-  KEY `FK_Administradores_Usuarios` (`id_user`),
-  CONSTRAINT `FK_Administradores_Usuarios` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=20002 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Administradores`
---
-
-LOCK TABLES `Administradores` WRITE;
-/*!40000 ALTER TABLE `Administradores` DISABLE KEYS */;
-INSERT INTO `Administradores` VALUES (20000,'Supremo senhor Kaioh','khsupremo@gmail.com','lgmEknykkZj0E',1,'SKaioh'),(20001,'João Silva Xavier','joao.x@gmail.com','lgAwFp8foUYcA',1,'admin1');
-/*!40000 ALTER TABLE `Administradores` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `Alunos`
 --
 
@@ -63,7 +33,7 @@ CREATE TABLE `Alunos` (
   UNIQUE KEY `mat_aluno` (`mat_aluno`),
   KEY `FK_Usuarios_Alunos` (`id_user`),
   CONSTRAINT `FK_Usuarios_Alunos` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +42,7 @@ CREATE TABLE `Alunos` (
 
 LOCK TABLES `Alunos` WRITE;
 /*!40000 ALTER TABLE `Alunos` DISABLE KEYS */;
-INSERT INTO `Alunos` VALUES (1,'Luis Henrique Chaves de Oliveira','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3),(3,'Renata Barbosa de Lima','20181LG3334','rena.barbosa@gmail.com','lgqhVuytGZvrs',3),(4,'Gabriel Barros Teixeira','20191INFIG0309','gabrielbarrosteixeira9@gmail.com','lgm9odYL3FXpw',3);
+INSERT INTO `Alunos` VALUES (1,'Luis Henrique Chaves de Oliveira','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3);
 /*!40000 ALTER TABLE `Alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +82,7 @@ CREATE TABLE `Disciplinas` (
   `name_disc` varchar(150) NOT NULL,
   `desc_disc` varchar(4000) DEFAULT NULL,
   PRIMARY KEY (`id_disc`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +91,6 @@ CREATE TABLE `Disciplinas` (
 
 LOCK TABLES `Disciplinas` WRITE;
 /*!40000 ALTER TABLE `Disciplinas` DISABLE KEYS */;
-INSERT INTO `Disciplinas` VALUES (1,'A','AAA'),(2,'b','bbb');
 /*!40000 ALTER TABLE `Disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-12 19:40:12
+-- Dump completed on 2019-10-27 22:28:58
