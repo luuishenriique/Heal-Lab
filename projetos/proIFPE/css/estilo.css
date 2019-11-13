@@ -61,9 +61,9 @@ h1, h2 {
 }
 
 .link-exit:hover{
-  color: red; 
+  color: red;
   transition: 0.4s;
-  background-color: #7f8fa6;
+  background-color: #ffffff;
 }
 
 /*p, li {
