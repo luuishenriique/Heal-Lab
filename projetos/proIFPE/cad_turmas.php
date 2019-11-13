@@ -1,22 +1,41 @@
 <title>proIFPE::Cadastro de Turmas</title>
 
 <?php 
+session_start();
 include 'header.php';
 include 'config.php';
 
-$dado = file(DIS_FILE);
+// $dado = file(DIS_FILE);
 
-$dados_cdr = file(CDR_FILE);
+// $dados_cdr = file(CDR_FILE);
 
-$dados_prof = file(PRO_FILE);
+// $dados_prof = file(PRO_FILE);
 
-$dados_curso = file(CUR_FILE);
+// $dados_curso = file(CUR_FILE);
 
-$dados = file(TUR_FILE); /*recebendo arquivos da tabela csv*/
-$turma = [];
+// $dados = file(TUR_FILE); /*recebendo arquivos da tabela csv*/
+// $turma = [];
 
-for ($i=0; $i < sizeof($dados); $i++) { 
-	$dados[$i] = explode(',', $dados[$i]);
+// for ($i=0; $i < sizeof($dados); $i++) { 
+// 	$dados[$i] = explode(',', $dados[$i]);
+// }
+
+
+$PDO = dbConnect();
+
+$sql = "SELECT * FROM Turmas";
+
+$stmt = $PDO->prepare($sql);
+
+$stmt->execute();
+
+$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($linhas);
+
+if (count($linhas) <= 0) {
+  // redirect('cad_disciplinas.php');
+	// echo 'Info::Achei nada!';
+	// exit();
 }
 
 ?>
@@ -28,64 +47,37 @@ for ($i=0; $i < sizeof($dados); $i++) {
 <?php endif ?>
 
 <br>
-<legend class="leg_form">Informações da turma</legend>
-<form class="form_info" action="add_tur.php" method="POST" style="text-align: center;">
-	<fieldset>
-		<input type="text" name="nturma" placeholder="Numero da turma">
-		<br>
-		<label>Informar curso:</label>
-		<select name="curso">
-			<option selected disabled value="">Selecione o curso:</option>
-			<?php foreach ($dados_curso as $cur): ?>
-				<option value="<?= $cur ?>"><?= $cur ?></option>
-			<?php endforeach ?>
-		</select>
-		<br>
-		<input type="text" name="alunos" placeholder="Quantidade de Alunos"><br>
-		<p>--------------</p>
-		<label>Informar disciplina:</label>
-		<select name="select-cadeira">
-			<option selected disabled value="">Selecione a disciplina</option>
-			<?php foreach ($dados_cdr as $cdr): ?>
-				<option value="<?= $cdr ?>"><?= $cdr ?></option>
-			<?php endforeach ?>
-		</select>
-		<!-- <input type="text" name="email" placeholder="Email do professor"><br> -->
-		<br>
-		<br>
-		<label>Informar professor:</label>
-		<select name="select-professor">
-			<option selected disabled value="">Selecione o professor</option>
-			<?php foreach ($dados_prof as $cdr): ?>
-				<option value="<?=  $cdr ?>"><?=  $cdr ?></option>
-			<?php endforeach ?>
-		</select>
-		<br>
-		<input type="submit" value="Adicionar">
-		<!-- <input type="reset" value="Limpar"> -->
-	</fieldset>
-</form>
-<br>
 <h2>Turmas cadastradas</h2>
 <br>
 <table>
-	<tr>
-		<th>Turma</th>
-		<th>Curso</th>
-		<th>Quantidade de alunos</th>
-		<th>Disciplina</th>
-		<!-- <th>Professor</th> -->
-		<th>Apagar Dados</th>
-	</tr>
-	<?php foreach ($dados as $i => $dado): ?>
+	<thead>
 		<tr>
-			<?php foreach ($dado as $dados): ?>
-				<td><?= $dados ?></td>
-			<?php endforeach  ?>
-			<td>
-				<a href="del_tur.php?linha=<?= $i ?>" class="btn"><i class="far fa-trash-alt">
-			</td>
+			<th>Nome da turma</th>
+			<th>Curso</th>
+			<th>Capacidade de alunos</th>
+			<th>Turno</th>
+			<!-- <th>Ações</th> -->
 		</tr>
-	<?php endforeach ?>
+	</thead>
+	<tbody>
+		<?php foreach ($linhas as $id => $linha): ?>
+			<tr>
+				<td><?= $linhas[$id]['nome_turma'] ?></td>
+				<td>
+					<?php if ($linhas[$id]['id_curso'] == 1): ?>
+						<?= "INFORMÁTICA PARA INTERNET" ?>
+					<?php endif ?>
+					<?php if ($linhas[$id]['id_curso'] == 2): ?>
+						<?= "LOGÍSTICA" ?>
+					<?php endif ?>					
+				</td>
+				<td><?= $linhas[$id]['capacidade_turma'] ?></td>
+				<td><?= $linhas[$id]['turno_turma'] ?></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
 </table>
+<br>
+<h3 style="text-align: center;"><a href="form_tur.php">Adicionar nova turma</a></h3>
+<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
 <?php include 'footer.php' ?>
