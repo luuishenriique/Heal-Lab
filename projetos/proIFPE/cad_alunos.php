@@ -38,8 +38,8 @@ if (count($linhas) <= 0) {
 			<th>Matrícula</th>
 			<th>Nome do Aluno</th>
 			<th>Email de contato</th>
-			<th>Curso</th>
-			<th>Turma</th>
+<!-- 			<th>Curso</th>
+			<th>Turma</th> -->
 			<th>Ãções</th>
 		</tr>	
 	</thead>
@@ -57,8 +57,8 @@ if (count($linhas) <= 0) {
 						<?= $linhas[$id]['email_aluno'] ?>
 						</td>
 					<?php endif ?>
-					<td></td>
-					<td></td>
+		<!-- 			<td></td>
+					<td></td> -->
 					<td>
 						<nav>
 							<a href="">&#133;</a> |
