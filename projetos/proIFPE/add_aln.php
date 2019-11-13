@@ -23,11 +23,22 @@ session_start();
 
 $matricula = $_POST['matricula'] ?? false;
 $nome = $_POST['nome_aln'] ?? false;
+$curso = $_POST['select-curso'] ?? false;
+$idcurso = 0;
 $iduser = 3;
+
+if ($curso == "INFORMÁTICA PARA INTERNET") {
+	$idcurso = 1;
+}
+
+if ($curso == "LOGÍSTICA") {
+	$idcurso = 2;
+}
 
 $PDO = dbConnect();
 
 $sql = "INSERT INTO Alunos(mat_aluno,name_aluno,id_user) values(:matricula,:nome,:iduser)";
+
 
 $stmt = $PDO->prepare($sql);
 
