@@ -2,7 +2,18 @@
 require 'config.php';
 include 'header.php';
 session_start();
+
+$PDO = dbConnect();
+
+$sql = "SELECT * FROM Disciplinas";
+
+$stmt = $PDO->prepare($sql);
+
+$stmt->execute();
+
+$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 <title>proIFPE::Adicionando professor</title>
 <br>
 <h1>Adicionando professor</h1>
@@ -14,6 +25,14 @@ session_start();
 		<input type="text" name="siape" placeholder="Ex: 3356875" required maxlength="07">
 		<legend>Nome do professor</legend>
 		<input type="text" name="nome_prof" placeholder="Ex: José Maria Lopes" required>
+		<label>Selecione a disciplina:</label>
+		<br>
+		<select class="select-disc" required>
+			<option selected disabled>Informe a disciplina</option>
+			<?php foreach ($linhas as $id => $linha): ?>
+				<option value="<?= $linhas[$id]['id_disc'] ?>"><?= $linhas[$id]['name_disc'] ?></option>
+			<?php endforeach ?>
+		</select>
 		<input type="submit" value="Adicionar">
 	</fieldset>
 </form>
