@@ -23,33 +23,36 @@ $tipo = $_SESSION['type_id'] ?? null;
 	<ul class="menu">
 		<?php if ($tipo == 1): ?>
 			<strong class="user-id"><?= '| ADMINISTRADOR |' ?></strong>
-			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horário |</a>
 			<a href="cadastro.php">| Cadastro |</a>
 			<a href="cad_turmas.php">| Turmas |</a>
 			<a href="notificacao.php">| Notificação |</a>
 			<a href="sobre.php">| Sobre |</a>
+			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if ($tipo == 2): ?>
 			<strong class="user-id"><?= '| PROFESSOR |' ?></strong>
-			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horários |</a>
 			<a href="cadastro.php" hidden>| Cadastro |</a>
 			<a href="cad_turmas.php">| Turmas |</a>
 			<a href="notificacao.php">| Notificação |</a>
 			<a href="sobre.php">| Sobre |</a>
+			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if ($tipo == 3): ?>
 			<strong class="user-id"><?= '| ALUNO |' ?></strong>
-			<a class="link-exit" href="logout.php">| Sair |</a>
+			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horários |</a>
 			<a href="cadastro.php" hidden>| Cadastro |</a>
 			<a href="cad_turmas.php" hidden>| Turmas |</a>
 			<a href="notificacao.php">| Notificação |</a>
  			<a href="sobre.php">| Sobre |</a>
+			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if (is_null($tipo)): ?>
 			<strong class="user-id"><?= '| VISITANTE |' ?></strong>
