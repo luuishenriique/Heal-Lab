@@ -22,16 +22,18 @@ session_start();
 $siape = $_POST['siape'] ?? false;
 $nome = $_POST['nome_prof'] ?? false;
 $iduser = 2;
+$iddisc = $_POST['select-disc'] ?? false;
 
 $PDO = dbConnect();
 
-$sql = "INSERT INTO Professores(siape_prof,name_prof,id_user) values(:siape,:nome,:iduser)";
+$sql = "INSERT INTO Professores(siape_prof,name_prof,id_user,id_disc) values(:siape,:nome,:iduser,:iddisc)";
 
 $stmt = $PDO->prepare($sql);
 
 $stmt->bindParam(':siape', $siape);
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':iduser', $iduser);
+$stmt->bindParam(':iddisc', $iddisc);
 
 $stmt->execute();
 
