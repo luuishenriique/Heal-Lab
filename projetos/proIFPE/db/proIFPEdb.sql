@@ -77,6 +77,32 @@ INSERT INTO `Alunos` VALUES (1,'Luis Henrique Chaves de Oliveira','20191INFIG020
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Aulas`
+--
+
+DROP TABLE IF EXISTS `Aulas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Aulas` (
+  `id_aula` int(11) NOT NULL AUTO_INCREMENT,
+  `data_aula` date DEFAULT NULL,
+  `cod_prof` int(11) NOT NULL,
+  `desc_aula` varchar(4000) NOT NULL,
+  PRIMARY KEY (`id_aula`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Aulas`
+--
+
+LOCK TABLES `Aulas` WRITE;
+/*!40000 ALTER TABLE `Aulas` DISABLE KEYS */;
+INSERT INTO `Aulas` VALUES (1,'2019-11-01',10000,'Aula 01 - Aprendendo HTML');
+/*!40000 ALTER TABLE `Aulas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Cursos`
 --
 
@@ -87,8 +113,9 @@ CREATE TABLE `Cursos` (
   `id_curso` int(11) NOT NULL AUTO_INCREMENT,
   `name_curso` varchar(50) NOT NULL,
   `desc_curso` varchar(4000) DEFAULT NULL,
+  `tipo_curso` varchar(50) NOT NULL,
   PRIMARY KEY (`id_curso`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +124,7 @@ CREATE TABLE `Cursos` (
 
 LOCK TABLES `Cursos` WRITE;
 /*!40000 ALTER TABLE `Cursos` DISABLE KEYS */;
+INSERT INTO `Cursos` VALUES (1,'INFORMÁTICA PARA INTERNET','DESENVOLVIMENTO PARA SISTEMAS WEB','TÉCNICO'),(2,'LOGÍSTICA','PROVER RECURSOS E INFORMAÇÕES PARA EXECUÇÃO DE ATIVIDADES DE UMA ORGANIZAÇÃO','TÉCNICO');
 /*!40000 ALTER TABLE `Cursos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,6 +139,7 @@ CREATE TABLE `Disciplinas` (
   `id_disc` int(11) NOT NULL AUTO_INCREMENT,
   `name_disc` varchar(150) NOT NULL,
   `desc_disc` varchar(4000) DEFAULT NULL,
+  `id_curso` int(11) NOT NULL,
   PRIMARY KEY (`id_disc`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -121,7 +150,7 @@ CREATE TABLE `Disciplinas` (
 
 LOCK TABLES `Disciplinas` WRITE;
 /*!40000 ALTER TABLE `Disciplinas` DISABLE KEYS */;
-INSERT INTO `Disciplinas` VALUES (1,'A','AAA'),(2,'b','bbb');
+INSERT INTO `Disciplinas` VALUES (1,'A','AAA',0),(2,'b','bbb',0);
 /*!40000 ALTER TABLE `Disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,9 +164,12 @@ DROP TABLE IF EXISTS `Matriculas`;
 CREATE TABLE `Matriculas` (
   `id_aluno` int(11) NOT NULL,
   `id_turma` int(11) NOT NULL,
+  `id_curso` int(11) NOT NULL,
   PRIMARY KEY (`id_aluno`,`id_turma`),
   KEY `FK_Matriculas_Turmas` (`id_turma`),
+  KEY `FK_Matriculas_Cursos` (`id_curso`),
   CONSTRAINT `FK_Matriculas_Alunos` FOREIGN KEY (`id_aluno`) REFERENCES `Alunos` (`id_aluno`),
+  CONSTRAINT `FK_Matriculas_Cursos` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Matriculas_Turmas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -191,17 +223,13 @@ DROP TABLE IF EXISTS `Turmas`;
 CREATE TABLE `Turmas` (
   `id_turma` int(11) NOT NULL AUTO_INCREMENT,
   `turno_turma` varchar(5) NOT NULL,
-  `id_disc` int(11) NOT NULL,
-  `id_prof` int(11) NOT NULL,
   `id_curso` int(11) NOT NULL,
+  `nome_turma` varchar(15) NOT NULL,
+  `capacidade_turma` int(3) DEFAULT NULL,
   PRIMARY KEY (`id_turma`),
-  KEY `FK_Disciplina_Turma` (`id_disc`),
-  KEY `FK_Professor_Turma` (`id_prof`),
   KEY `FK_Curso_Turma` (`id_curso`),
-  CONSTRAINT `FK_Curso_Turma` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
-  CONSTRAINT `FK_Disciplina_Turma` FOREIGN KEY (`id_disc`) REFERENCES `Disciplinas` (`id_disc`),
-  CONSTRAINT `FK_Professor_Turma` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_Curso_Turma` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,6 +238,7 @@ CREATE TABLE `Turmas` (
 
 LOCK TABLES `Turmas` WRITE;
 /*!40000 ALTER TABLE `Turmas` DISABLE KEYS */;
+INSERT INTO `Turmas` VALUES (1,'Manhã',1,'20191INFIG01',32);
 /*!40000 ALTER TABLE `Turmas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-12 19:40:12
+-- Dump completed on 2019-11-13  0:10:41
