@@ -33,13 +33,6 @@ if (count($linhas) <= 0) {
 		<legend>Nome do aluno</legend>
 		<input type="text" name="nome_aln" placeholder="Ex: Timóteo Cabral de Seráfia" required>
 		<br>
-		<label>Selecione o Curso:</label>
-		<select name="select-curso" required>
-			<option selected disabled>Informe o curso</option>
-			<?php foreach ($linhas as $id => $linha): ?>
-				<option value="<?= $linhas[$id]['id_curso'] ?>"><?= $linhas[$id]['name_curso'] ?></option>
-			<?php endforeach ?>
-		</select>
 		<input type="submit" value="Adicionar">
 	</fieldset>
 </form>
