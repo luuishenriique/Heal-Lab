@@ -33,8 +33,16 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if (count($linhas) <= 0) {
   // redirect('cad_disciplinas.php');
 	echo 'Info::Achei nada!';
-	exit();
+	// exit();
 }
+
+$sql2 = "SELECT * FROM Disciplinas";
+
+$stmt = $PDO->prepare($sql2);
+
+$stmt->execute();
+
+$linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <br>
 <h2>Professores cadastrados</h2>
@@ -45,7 +53,7 @@ if (count($linhas) <= 0) {
 			<th>SIAPE</th>
 			<th>Nome do professor</th>
 			<th>Email de contato</th>
-			<th>Nível de acesso</th>
+			<th>Disciplina</th>
 			<th>Ações</th>
 		</tr>
 	</thead>
@@ -65,7 +73,17 @@ if (count($linhas) <= 0) {
 						<?= $linhas[$id]['email_prof'] ?>
 					</td>
 				<?php endif ?>
-				<td><?= $linhas[$id]['id_user'] ?></td>
+				<td>
+					<?php if (is_null($linhas[$id]['id_disc'])): ?>
+						<td style="background-color: yellow; width: 50%; margin: auto;">
+							<?= "Sem disciplina" ?>
+						</td>
+						<?php else: ?>
+							<td>
+								<?= $linhas2[$id]['name_disc'] ?>
+							</td>
+					<?php endif ?>
+				</td>
 				<td>
 					<nav>
 						<a href="">&#133;</a> |
