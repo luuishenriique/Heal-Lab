@@ -23,15 +23,17 @@ session_start();
 
 $nome = $_POST['nome_disc'] ?? false;
 $descricao = $_POST['desc_disc'] ?? false;
+$curso = $_POST['select-curso'] ?? false;
 
 $PDO = dbConnect();
 
-$sql = "INSERT INTO Disciplinas(name_disc,desc_disc) values(:nome,:descricao)";
+$sql = "INSERT INTO Disciplinas(name_disc,desc_disc,id_curso) values(:nome,:descricao,:idcurso)";
 
 $stmt = $PDO->prepare($sql);
 
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':descricao', $descricao);
+$stmt->bindParam(':idcurso', $curso);
 
 $stmt->execute();
 
