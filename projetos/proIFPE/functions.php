@@ -10,6 +10,10 @@ function upperALL($str){
 	strtoupper($str);
 }
 
+function checkString($word, $var){
+	return strpos($var, $word) !== false;
+}
+
 function dbConnect(){
 	try {
 		$dsn = 'mysql:dbname=' . DB_NAME . ';host=' . DB_HOST . ';port=' . DB_PORT . ';charset=utf8';
@@ -24,16 +28,6 @@ function dbConnect(){
 
 function cryptPass($str){
 	return crypt($str,'lg');
-}
-
-function randomWord($var){
-
-	$n = rand(0,sizeof(KEY_WORDS));
-
-	$var = KEY_WORDS[$n];
-
-	echo $var;
-
 }
 
 function isLoggedIn(){
