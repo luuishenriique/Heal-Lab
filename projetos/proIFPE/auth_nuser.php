@@ -5,10 +5,23 @@ $dados = $_POST['user_data'] ?? false;
 $email = $_POST['email'] ?? false;
 $senha = $_POST['senha'] ?? false;
 $conf_senha = $_POST['conf_senha'] ?? false;
-$adm_senha = $_POST['adm_senha'] ?? false;
+$keyword = $_POST['keyword'] ?? false;
+$vkeyword = $_POST['vkeyword'] ?? false;
+$findINF = "inf";
+$findLOG = "log";
+$checkINF = checkString($findINF, $matricula);
+$checkLOG = checkString($findLOG, $matricula);
 
 echo $dados;
 echo $email; 
+
+if (checkINF === true) {
+	$dados = strtoupper($dados);
+}
+
+if (checkLOG === true) {
+	$dados = strtoupper($dados);
+}
 
 if ($senha !== $conf_senha) {
 	redirect('att_nuser.php?msg=Senhas não são iguais!');
@@ -19,10 +32,8 @@ if ($senha !== $conf_senha) {
 	echo $senha;
 }
 
-if ($adm_senha !== ADM_SENHA) {
-	redirect('att_nuser.php?msg=Senha do administrador incorreta!');
-	echo $adm_senha;
-	echo ADM_SENHA;
+if ($vkeyword !== $keyword) {
+	redirect('att_nuser.php?msg=Palavra-chave incorreta!');
 	exit();
 }
 
