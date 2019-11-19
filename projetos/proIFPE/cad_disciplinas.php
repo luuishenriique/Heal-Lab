@@ -34,6 +34,15 @@ if (count($linhas) <= 0) {
   echo 'Info::Achei nada!';
   // exit();
 }
+
+$sql2 = "SELECT * FROM Professores";
+
+$stmt = $PDO->prepare($sql2);
+
+$stmt->execute();
+
+$linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <?php if (!isset($_GET['msg'])): ?>
   <?= $_GET['msg'] ?>
@@ -44,29 +53,44 @@ if (count($linhas) <= 0) {
 <table>
   <thead>
     <tr>
-      <th>Código</th>
       <th>Disciplina</th>
       <th>Descrição</th>
+      <th>Curso</th>
+      <th>Professor</th>
       <th>Ações</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($linhas as $id => $linha): ?>
       <tr>
-        <td><?= $linhas[$id]['id_disc'] ?></td>
         <td><?= $linhas[$id]['name_disc'] ?></td>
         <td><?= $linhas[$id]['desc_disc'] ?></td>
         <td>
-          <nav>
-            <a href="">&#133;</a> |
-            <a href="">&times;</a>
-          </nav>
+          <?php if ($linhas[$id]['id_curso'] == 1): ?>
+            <?= "INFORMÁTICA PARA INTERNET" ?>
+          <?php endif ?>
+          <?php if ($linhas[$id]['id_curso'] == 2): ?>
+            <?= "LOGÍSTICA" ?>
+          <?php endif ?>
         </td>
-      </tr>
-    <?php endforeach ?>
-  </tbody>
-</table>
-<br>
-<h3 style="text-align: center;"><a href="form_dis.php">Adicionar nova disciplina</a></h3>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
-<?php include 'footer.php' ?>
+        <?php if (is_null($linhas[$id]['id_prof'])): ?>
+          <td style="background-color: yellow; width: 50%; margin: auto;">
+            <?= "Professor indefinido" ?>
+          </td>
+          <?php else: ?>
+            <td><?= $linhas2[$id]['name_prof'] ?></td>
+          <?php endif ?>
+          <td>
+            <nav>
+              <a href="">&#133;</a> |
+              <a href="">&times;</a>
+            </nav>
+          </td>
+        </tr>
+      <?php endforeach ?>
+    </tbody>
+  </table>
+  <br>
+  <h3 style="text-align: center;"><a href="form_dis.php">Adicionar nova disciplina</a></h3>
+  <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+  <?php include 'footer.php' ?>
