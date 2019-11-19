@@ -1,10 +1,11 @@
 <?php 
 require 'config.php';
 include 'header.php';
-$a = "";
+$words = array("irrepairable","relata","superextreme","bordarius","likin","bicornate","acleistous","moistly","arthropterous","spealbone","heroify","web","variative","sphingine","magnifiable","syntagma","analytic","subcultural","bereason","prophesy","millinery","waveringness","chalaze","pyramidize","antefix","splenium","inconvertibility","rodenticidal","supersensuousness","kitthoge");
+$n = rand(0,sizeof($words));
+$word = $words[$n];
 ?>
 <title>Liberar usuário</title>
-</div>
 <br>
 <form class="form_info" method="POST" action="auth_nuser.php">
 	<fieldset>
@@ -17,11 +18,12 @@ $a = "";
 		<input type="password" name="senha" required>
 		<legend>Confirme a Senha</legend>
 		<input type="password" name="conf_senha" required>
-		<label>Palavra-Chave: <?= $b = randomWord($a); ?></label>
+		<input type="text" hidden name="keyword" value="<?= $word ?>">
+		<label>Palavra-Chave: <?= $word ?></label>
 		<br>
 		<label></label>
 		<br>
-		<legend>Confirme a palavra-chave</legend>
+		<legend>Confirme a palavra-chave:</legend>
 		<input type="text" name="vkeyword" required>
 		<input type="submit" value="Atualizar dados">
 	</fieldset>
