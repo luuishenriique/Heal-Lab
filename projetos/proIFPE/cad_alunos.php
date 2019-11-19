@@ -16,11 +16,11 @@ $stmt->execute();
 $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($linhas);
 
-if (count($linhas) <= 0) {
-	redirect('login.php');
-	echo 'Achei nada!';
-	exit();
-}
+// if (count($linhas) <= 0) {
+// 	redirect('login.php');
+// 	echo 'Achei nada!';
+// 	exit();
+// }
 ?>
 
 <?php if (!empty($_GET['msg'])): ?>
@@ -37,6 +37,7 @@ if (count($linhas) <= 0) {
 		<tr>
 			<th>Matrícula</th>
 			<th>Nome do Aluno</th>
+			<th>Curso</th>
 			<th>Email de contato</th>
 <!-- 			<th>Curso</th>
 			<th>Turma</th> -->
@@ -48,6 +49,14 @@ if (count($linhas) <= 0) {
 			<tr>
 				<td><?= $linhas[$id]['mat_aluno'] ?></td>
 				<td><?= $linhas[$id]['name_aluno'] ?></td>
+				<td>
+					<?php if ($linhas[$id]['id_curso'] == 1): ?>
+						<?= "INFORMÁTICA PARA INTERNET" ?>
+					<?php endif ?>
+					<?php if ($linhas[$id]['id_curso'] == 2): ?>
+						<?= "LOGÍSTICA" ?>
+					<?php endif ?>
+				</td>
 				<?php if (is_null($linhas[$id]['email_aluno'])): ?>
 					<td style="background-color: yellow; width: 50%; margin: auto;">
 					<?= "Aguardando validação de usuário" ?>
@@ -57,8 +66,6 @@ if (count($linhas) <= 0) {
 						<?= $linhas[$id]['email_aluno'] ?>
 						</td>
 					<?php endif ?>
-		<!-- 			<td></td>
-					<td></td> -->
 					<td>
 						<nav>
 							<a href="">&#133;</a> |
