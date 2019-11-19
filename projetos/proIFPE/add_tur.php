@@ -38,5 +38,10 @@ $stmt->bindParam(':turno', $turno);
 
 $stmt->execute();
 
-redirect('cad_turmas.php');
+session_start();
+$_SESSION['turma'] = $nome;
+$_SESSION['curso-turma'] = $curso;
+$_SESSION['capacidade-turma'] = $capacidade;
+
+redirect('cad_turmas_aln.php');
 ?>
