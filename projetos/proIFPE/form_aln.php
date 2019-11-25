@@ -5,7 +5,7 @@ session_start();
 
 $PDO = dbConnect();
 
-$sql = "SELECT * FROM Cursos";
+$sql = "SELECT * FROM Turmas";
 
 $stmt = $PDO->prepare($sql);
 
@@ -33,6 +33,14 @@ if (count($linhas) <= 0) {
 		<legend>Nome do aluno</legend>
 		<input type="text" name="nome_aln" placeholder="Ex: Timóteo Cabral de Seráfia" required>
 		<br>
+		<label>Selecione uma turma</label>
+		<br>
+		<select name="select-turma">
+			<option selected disabled required>Informe a turma</option>
+			<?php foreach ($linhas as $id => $linha): ?>
+				<option value="<?= $linhas[$id]['id_turma'] ?>"><?= $linhas[$id]['nome_turma'] ?></option>
+			<?php endforeach ?>
+		</select>
 		<input type="submit" value="Adicionar">
 	</fieldset>
 </form>
