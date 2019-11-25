@@ -32,7 +32,7 @@ CREATE TABLE `Administradores` (
   PRIMARY KEY (`id_adm`),
   KEY `FK_Administradores_Usuarios` (`id_user`),
   CONSTRAINT `FK_Administradores_Usuarios` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=20002 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20003 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `Administradores` (
 
 LOCK TABLES `Administradores` WRITE;
 /*!40000 ALTER TABLE `Administradores` DISABLE KEYS */;
-INSERT INTO `Administradores` VALUES (20000,'Supremo senhor Kaioh','khsupremo@gmail.com','lgmEknykkZj0E',1,'SKaioh'),(20001,'João Silva Xavier','joao.x@gmail.com','lgAwFp8foUYcA',1,'admin1');
+INSERT INTO `Administradores` VALUES (20000,'Supremo senhor Kaioh','khsupremo@gmail.com','lgmEknykkZj0E',1,'SKaioh'),(20001,'João Silva Xavier','joao.x@gmail.com','lgAwFp8foUYcA',1,'admin1'),(20002,'lalala',NULL,NULL,1,'admin2');
 /*!40000 ALTER TABLE `Administradores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +69,7 @@ CREATE TABLE `Alunos` (
   CONSTRAINT `FK_Alunos_Cursos` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Alunos_Turmas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`),
   CONSTRAINT `FK_Usuarios_Alunos` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `Alunos` (
 
 LOCK TABLES `Alunos` WRITE;
 /*!40000 ALTER TABLE `Alunos` DISABLE KEYS */;
-INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL);
+INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL),(7,'LARISSA FERREIRA LOPES','20191INFIG0082','larrisa@gmail.com','lgsTC5NSnyhso',3,1,NULL),(8,'MARIA EDUARDA JANSEM PEREIRA','20191INFIG0112','mariaj@gmail.com','lgz83J9PPQtxg',3,1,NULL),(9,'MARIA MARIA','20191LOG3333',NULL,NULL,3,2,3);
 /*!40000 ALTER TABLE `Alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,10 +95,12 @@ CREATE TABLE `Aulas` (
   `desc_aula` varchar(4000) NOT NULL,
   `id_prof` int(11) NOT NULL,
   `id_turma` int(11) NOT NULL,
-  `id_disc` int(11) NOT NULL,
-  `id_curso` int(11) NOT NULL,
-  PRIMARY KEY (`id_aula`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id_aula`),
+  KEY `FK_Professores_Aulas` (`id_prof`),
+  KEY `FK_Turmas_Aulas` (`id_turma`),
+  CONSTRAINT `FK_Professores_Aulas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`),
+  CONSTRAINT `FK_Turmas_Aulas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +109,7 @@ CREATE TABLE `Aulas` (
 
 LOCK TABLES `Aulas` WRITE;
 /*!40000 ALTER TABLE `Aulas` DISABLE KEYS */;
-INSERT INTO `Aulas` VALUES (1,'2019-11-01','Aula 01 - Aprendendo HTML',0,0,0,0),(2,'2017-07-31','dfsdf',0,0,0,0);
+INSERT INTO `Aulas` VALUES (1,'2019-11-14','asdasdasd',6,4);
 /*!40000 ALTER TABLE `Aulas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +157,7 @@ CREATE TABLE `Disciplinas` (
   KEY `FK_Cursos_Disciplinas` (`id_curso`),
   CONSTRAINT `FK_Cursos_Disciplinas` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Professores_Disciplinas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +166,7 @@ CREATE TABLE `Disciplinas` (
 
 LOCK TABLES `Disciplinas` WRITE;
 /*!40000 ALTER TABLE `Disciplinas` DISABLE KEYS */;
-INSERT INTO `Disciplinas` VALUES (3,'Informática','Conceitos básicos de programação web e revisão de conteúdo de cadeiras de sala de aula.',NULL,1),(4,'Matemática','Base de cálculos básica, funções, vetores, plano cartesiano.',NULL,1),(5,'Matemática','Aprender a calcular e conceitos básicos de funções',NULL,2);
+INSERT INTO `Disciplinas` VALUES (3,'Informática','Conceitos básicos de programação web e revisão de conteúdo de cadeiras de sala de aula.',NULL,1),(4,'Matemática','Base de cálculos básica, funções, vetores, plano cartesiano.',NULL,1),(5,'Matemática','Aprender a calcular e conceitos básicos de funções',NULL,2),(6,'POO','POO',NULL,1);
 /*!40000 ALTER TABLE `Disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,7 +220,7 @@ CREATE TABLE `Professores` (
   KEY `FK_Disciplinas_Professores` (`id_disc`),
   CONSTRAINT `FK_Disciplinas_Professores` FOREIGN KEY (`id_disc`) REFERENCES `Disciplinas` (`id_disc`),
   CONSTRAINT `FK_Usuarios_Professores` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,6 +229,7 @@ CREATE TABLE `Professores` (
 
 LOCK TABLES `Professores` WRITE;
 /*!40000 ALTER TABLE `Professores` DISABLE KEYS */;
+INSERT INTO `Professores` VALUES (1,'1234567','lalala',NULL,NULL,2,6),(2,'1111111','um',NULL,NULL,2,6),(3,'2222222','dois',NULL,NULL,2,4),(4,'3333333','tres',NULL,NULL,2,3),(5,'4444444','quatro',NULL,NULL,2,6),(6,'5555555','cinco','cinco@gmail.com','lghRCruxuPjgk',2,3);
 /*!40000 ALTER TABLE `Professores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,7 +255,7 @@ CREATE TABLE `Turmas` (
   CONSTRAINT `FK_Curso_Turma` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Disciplinas_Turmas` FOREIGN KEY (`id_disc`) REFERENCES `Disciplinas` (`id_disc`),
   CONSTRAINT `FK_Professores_Turmas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,6 +264,7 @@ CREATE TABLE `Turmas` (
 
 LOCK TABLES `Turmas` WRITE;
 /*!40000 ALTER TABLE `Turmas` DISABLE KEYS */;
+INSERT INTO `Turmas` VALUES (2,'Manhã',1,'20191INFIG',40,NULL,NULL),(3,'Tarde',2,'20191LOGIG',40,NULL,NULL),(4,'Tarde',1,'20192INFIG',35,6,3),(5,'Manhã',1,'aaaa',21,5,6);
 /*!40000 ALTER TABLE `Turmas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,4 +301,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-18 22:57:49
+-- Dump completed on 2019-11-20  6:17:33
