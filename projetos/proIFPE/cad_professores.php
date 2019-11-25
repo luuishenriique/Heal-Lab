@@ -73,7 +73,6 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 						<?= $linhas[$id]['email_prof'] ?>
 					</td>
 				<?php endif ?>
-				<td>
 					<?php if (is_null($linhas[$id]['id_disc'])): ?>
 						<td style="background-color: yellow; width: 50%; margin: auto;">
 							<?= "Sem disciplina" ?>
@@ -83,7 +82,6 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 								<?= $linhas2[$id]['name_disc'] ?>
 							</td>
 					<?php endif ?>
-				</td>
 				<td>
 					<nav>
 						<a href="">&#133;</a> |
