@@ -27,7 +27,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		<input type="text" name="nome_prof" placeholder="Ex: José Maria Lopes" required>
 		<label>Selecione a disciplina:</label>
 		<br>
-		<select class="select-disc" required>
+		<select name="select-disc" required>
 			<option selected disabled required>Informe a disciplina</option>
 			<?php foreach ($linhas as $id => $linha): ?>
 				<option value="<?= $linhas[$id]['id_disc'] ?>"><?= $linhas[$id]['name_disc'] ?></option>
