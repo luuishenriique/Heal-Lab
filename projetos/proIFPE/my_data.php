@@ -102,7 +102,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Administrador' ?></td>
 				<td>
 					<nav>
-						<a href="">Modificar dados</a> 
+						<a href="alt_data.php">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
@@ -117,7 +117,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Professor' ?></td>
 				<td>
 					<nav>
-						<a href="">Modificar dados</a> 
+						<a href="alt_data.php">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
@@ -132,7 +132,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Aluno' ?></td>
 				<td>
 					<nav>
-					<a href="">Modificar dados</a> 
+					<a href="alt_data.php">Modificar dados</a> 
 					</nav>
 				</td>
 			</tr>
