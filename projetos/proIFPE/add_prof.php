@@ -1,6 +1,8 @@
 <?php
 include 'config.php';
 session_start();
+$_SESSION['siape'] = $_POST['siape'];
+$_SESSION['nome-prof'] = $_POST['nome_prof'];
 // $siape = $_POST['siape'];
 // $nome = $_POST['professor'];
 // $email = $_POST['email'];
@@ -37,5 +39,5 @@ $stmt->bindParam(':iddisc', $iddisc);
 
 $stmt->execute();
 
-redirect('cad_professores.php');
+redirect('save_prof_id.php');
 ?>
