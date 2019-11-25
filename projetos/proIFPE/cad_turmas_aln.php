@@ -3,11 +3,11 @@ require 'config.php';
 include 'header.php';
 session_start();
 $curso = $_SESSION['curso-turma'];
-echo $curso;
+// echo $curso;
 
 $PDO = dbConnect();
 
-$sql = 'SELECT * FROM ALUNOS WHERE id_curso = :idcurso AND id_turma IS NULL';
+$sql = 'SELECT * FROM Alunos WHERE id_curso = :idcurso AND id_turma is NULL';
 
 $stmt = $PDO->prepare($sql);
 
@@ -21,7 +21,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <br>
 <h1>Adicionando alunos em turma <?= $_SESSION['turma'] ?></h1>
 <br>
-<form class="form_info" action="add_aln.php" method="POST">
+<form action="add_aln.php" method="POST">
 	<table>
 		<thead>
 			<tr>
@@ -32,9 +32,11 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		</thead>
 		<tbody>
 			<?php foreach ($linhas as $id => $linha): ?>
-				<tr><?= $linhas[$id]['mat_aluno'] ?></tr>
-				<tr><?= $linhas[$id]['name_aluno'] ?></tr>
-				<tr><a href=""></a>Adicionar na turma</tr>
+				<tr>
+					<td><?= $linhas[$id]['mat_aluno'] ?></td>
+					<td><?= $linhas[$id]['name_aluno'] ?></td>
+					<td><a href="add_aln_tur.php">Adicionar aluno</a></td>
+				</tr>
 			<?php endforeach ?>
 		</tbody>
 	</table>
