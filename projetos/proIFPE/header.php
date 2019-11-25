@@ -22,7 +22,7 @@ $tipo = $_SESSION['type_id'] ?? null;
 	<!-- </label> -->
 	<ul class="menu">
 		<?php if ($tipo == 1): ?>
-			<strong class="user-id"><?= '| ADMINISTRADOR |' ?></strong>
+			<!-- <strong class="user-id"><?= '| ADMINISTRADOR |' ?></strong> -->
 			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horário |</a>
@@ -33,7 +33,7 @@ $tipo = $_SESSION['type_id'] ?? null;
 			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if ($tipo == 2): ?>
-			<strong class="user-id"><?= '| PROFESSOR |' ?></strong>
+			<!-- <strong class="user-id"><?= '| PROFESSOR |' ?></strong> -->
 			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horários |</a>
@@ -44,7 +44,7 @@ $tipo = $_SESSION['type_id'] ?? null;
 			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if ($tipo == 3): ?>
-			<strong class="user-id"><?= '| ALUNO |' ?></strong>
+			<!-- <strong class="user-id"><?= '| ALUNO |' ?></strong> -->
 			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horários |</a>
@@ -55,14 +55,15 @@ $tipo = $_SESSION['type_id'] ?? null;
 			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>
 		<?php if (is_null($tipo)): ?>
-			<strong class="user-id"><?= '| VISITANTE |' ?></strong>
-			<a class="link-exit" href="logout.php" hidden>| Sair |</a>
+			<!-- <strong class="user-id"><?= '| VISITANTE |' ?></strong> -->
+			<a href="home.php">| Home |</a>
 			<a href="disciplinas.php">| Apresentação |</a>
 			<a href="horario.php">| Horários |</a>
 			<a href="cadastro.php" hidden>| Cadastro |</a>
 			<a href="cad_turmas.php" hidden>| Turmas |</a>
 			<a href="notificacao.php" hidden>| Notificação |</a>
  			<a href="sobre.php">| Sobre |</a>	
+			<a class="link-exit" href="logout.php">| Sair |</a>
 		<?php endif ?>	
 	</ul>
 </label>
