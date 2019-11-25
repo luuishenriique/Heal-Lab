@@ -12,14 +12,14 @@ $findLOG = "log";
 $checkINF = checkString($findINF, $matricula);
 $checkLOG = checkString($findLOG, $matricula);
 
-echo $dados;
-echo $email; 
+// echo $dados;
+// echo $email; 
 
-if (checkINF === true) {
+if ($checkINF === true) {
 	$dados = strtoupper($dados);
 }
 
-if (checkLOG === true) {
+if ($checkLOG === true) {
 	$dados = strtoupper($dados);
 }
 
