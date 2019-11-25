@@ -21,6 +21,7 @@ session_start();
 // 	redicect("cad_alunos.php?msg=Registro inserido com sucesso!");	
 // }
 
+$turma = $_POST['select-turma'] ?? false;
 $matricula = $_POST['matricula'] ?? false;
 $matricula = strtoupper($matricula); /*convertendo para maiúsculo*/
 $nome = $_POST['nome_aln'] ?? false;
@@ -61,7 +62,7 @@ if (checkINF === false && checkLOG === false) {
 
 $PDO = dbConnect();
 
-$sql = "INSERT INTO Alunos(mat_aluno,name_aluno,id_user,id_curso) VALUES(:matricula,:nome,:iduser,:idcurso)";
+$sql = "INSERT INTO Alunos(mat_aluno,name_aluno,id_user,id_curso,id_turma) VALUES(:matricula,:nome,:iduser,:idcurso,:idturma)";
 
 
 $stmt = $PDO->prepare($sql);
@@ -70,6 +71,7 @@ $stmt->bindParam(':matricula', $matricula);
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':iduser', $iduser);
 $stmt->bindParam(':idcurso', $idcurso);
+$stmt->bindParam(':idturma', $turma);
 
 $stmt->execute();
 
