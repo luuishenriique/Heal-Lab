@@ -79,6 +79,7 @@ if (strlen($dados) == 7) {
 	$_SESSION['user_data'] = $dado['siape_prof'];
 	$_SESSION['user_name'] = $dado['name_prof'];
 	$_SESSION['type_id'] = $dado['id_user'];
+	$_SESSION['iddisc'] = $dado['id_disc'];
 	$tipo = $_SESSION['type_id'];
 
 	redirect('home.php');
