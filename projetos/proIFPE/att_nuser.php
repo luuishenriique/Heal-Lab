@@ -1,7 +1,7 @@
 <?php 
 require 'config.php';
 include 'header.php';
-$words = array("irrepairable","relata","superextreme","bordarius","likin","bicornate","acleistous","moistly","arthropterous","spealbone","heroify","web","variative","sphingine","magnifiable","syntagma","analytic","subcultural","bereason","prophesy","millinery","waveringness","chalaze","pyramidize","antefix","splenium","inconvertibility","rodenticidal","supersensuousness","kitthoge");
+$words = array("irrepairable","relata","superextreme","bordarius","likin","bicornate","acleistous","moistly","arthropterous","spealbone","heroify","web","variative","sphingine","magnifiable","syntagma","analytic","subcultural","bereason","prophesy","millinery","waveringness","chalaze","pyramidize","antefix","splenium","inconvertibility","rodenticidal","supersensuousness","kitthoge","clubhouse");
 $n = rand(0,sizeof($words));
 $word = $words[$n];
 ?>
