@@ -3,6 +3,9 @@ require 'config.php';
 include 'header.php';
 session_start();
 
+$idturma = $_GET['id'];
+$hoje = date("d/m/Y");
+
 $PDO = dbConnect();
 
 $sql = "SELECT * FROM Cursos";
@@ -25,15 +28,16 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <br>
 <h1>Adicionando aula</h1>
 <br>
-<form class="form_info" action="add_aula.php" method="POST">
+<form class="form_info" action="add_aula.php?id=<?= $idturma ?>" method="POST">
 	<fieldset>
 		<legend>Dados da aula</legend>
-		<Label>Data da aula:</Label>
-		<input type="date" name="data" required>
+		<Label>Data da aula: <?= $hoje ?></Label>
+		<!-- <input type="date" name="data" required> -->
 		<br>
 		<br>
 		<Label>Descrição da aula:</Label>
-		<input type="text" name="descricao" placeholder="Ex: Aula 01 - Aprendendo HTML" required>
+		<!-- <input type="text" name="descricao" placeholder="Ex: Aula 01 - Aprendendo HTML" required> -->
+		<textarea name="descricao" placeholder="Ex: Introdução à cadeira" required rows="5" cols="33"></textarea>
 		<br>
 		<input type="submit" value="Adicionar">
 	</fieldset>
