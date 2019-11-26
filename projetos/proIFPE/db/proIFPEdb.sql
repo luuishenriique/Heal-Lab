@@ -69,7 +69,7 @@ CREATE TABLE `Alunos` (
   CONSTRAINT `FK_Alunos_Cursos` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Alunos_Turmas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`),
   CONSTRAINT `FK_Usuarios_Alunos` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `Alunos` (
 
 LOCK TABLES `Alunos` WRITE;
 /*!40000 ALTER TABLE `Alunos` DISABLE KEYS */;
-INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL),(7,'LARISSA FERREIRA LOPES','20191INFIG0082','larrisa@gmail.com','lgsTC5NSnyhso',3,1,NULL),(8,'MARIA EDUARDA JANSEM PEREIRA','20191INFIG0112','mariaj@gmail.com','lgz83J9PPQtxg',3,1,NULL),(9,'MARIA MARIA','20191LOG3333',NULL,NULL,3,2,3);
+INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL),(7,'LARISSA FERREIRA LOPES','20191INFIG0082','larrisa@gmail.com','lgsTC5NSnyhso',3,1,NULL),(8,'MARIA EDUARDA JANSEM PEREIRA','20191INFIG0112','mariaj@gmail.com','lgz83J9PPQtxg',3,1,NULL),(9,'MARIA MARIA','20191LOG3333',NULL,NULL,3,2,3),(10,'JOSEPH JOESTAR','20191LOGIGM',NULL,NULL,3,2,3),(11,'TIMóTEO CABRAL','20192LOGIG0003',NULL,NULL,3,2,3),(12,'MORGANA FERNANDES','20182INFIG0148','morg@gmail.com','lgcsxqP4p2I1c',3,1,2),(13,'ROBSON GOMES','20182INFIG0377','robson@gmail.com','lgsTC5NSnyhso',3,1,4);
 /*!40000 ALTER TABLE `Alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `Aulas` (
   KEY `FK_Turmas_Aulas` (`id_turma`),
   CONSTRAINT `FK_Professores_Aulas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`),
   CONSTRAINT `FK_Turmas_Aulas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,8 +109,37 @@ CREATE TABLE `Aulas` (
 
 LOCK TABLES `Aulas` WRITE;
 /*!40000 ALTER TABLE `Aulas` DISABLE KEYS */;
-INSERT INTO `Aulas` VALUES (1,'2019-11-14','asdasdasd',6,4);
+INSERT INTO `Aulas` VALUES (1,'2019-11-14','asdasdasd',6,4),(2,NULL,'Aula de usar manconha',9,2),(3,NULL,'dfasfasfaf',9,2),(4,'2019-11-25','aula experimental\r\n',6,4);
 /*!40000 ALTER TABLE `Aulas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Chamadas`
+--
+
+DROP TABLE IF EXISTS `Chamadas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Chamadas` (
+  `id_chamada` int(11) NOT NULL AUTO_INCREMENT,
+  `qtd_faltas_chamada` int(11) NOT NULL,
+  `id_aula` int(11) NOT NULL,
+  `id_aluno` int(11) NOT NULL,
+  PRIMARY KEY (`id_chamada`),
+  KEY `FK_Aulas_Chamadas` (`id_aula`),
+  KEY `FK_Alunos_Chamadas` (`id_aluno`),
+  CONSTRAINT `FK_Alunos_Chamadas` FOREIGN KEY (`id_aluno`) REFERENCES `Alunos` (`id_aluno`),
+  CONSTRAINT `FK_Aulas_Chamadas` FOREIGN KEY (`id_aula`) REFERENCES `Aulas` (`id_aula`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Chamadas`
+--
+
+LOCK TABLES `Chamadas` WRITE;
+/*!40000 ALTER TABLE `Chamadas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Chamadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -157,7 +186,7 @@ CREATE TABLE `Disciplinas` (
   KEY `FK_Cursos_Disciplinas` (`id_curso`),
   CONSTRAINT `FK_Cursos_Disciplinas` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Professores_Disciplinas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +195,7 @@ CREATE TABLE `Disciplinas` (
 
 LOCK TABLES `Disciplinas` WRITE;
 /*!40000 ALTER TABLE `Disciplinas` DISABLE KEYS */;
-INSERT INTO `Disciplinas` VALUES (3,'Informática','Conceitos básicos de programação web e revisão de conteúdo de cadeiras de sala de aula.',NULL,1),(4,'Matemática','Base de cálculos básica, funções, vetores, plano cartesiano.',NULL,1),(5,'Matemática','Aprender a calcular e conceitos básicos de funções',NULL,2),(6,'POO','POO',NULL,1);
+INSERT INTO `Disciplinas` VALUES (3,'Informática','Conceitos básicos de programação web e revisão de conteúdo de cadeiras de sala de aula.',NULL,1),(4,'Matemática','Base de cálculos básica, funções, vetores, plano cartesiano.',NULL,1),(5,'Matemática','Aprender a calcular e conceitos básicos de funções',NULL,2),(6,'POO','POO',NULL,1),(7,'Matemática Elementar','qualquer coisa',NULL,1);
 /*!40000 ALTER TABLE `Disciplinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,7 +249,7 @@ CREATE TABLE `Professores` (
   KEY `FK_Disciplinas_Professores` (`id_disc`),
   CONSTRAINT `FK_Disciplinas_Professores` FOREIGN KEY (`id_disc`) REFERENCES `Disciplinas` (`id_disc`),
   CONSTRAINT `FK_Usuarios_Professores` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +258,7 @@ CREATE TABLE `Professores` (
 
 LOCK TABLES `Professores` WRITE;
 /*!40000 ALTER TABLE `Professores` DISABLE KEYS */;
-INSERT INTO `Professores` VALUES (1,'1234567','lalala',NULL,NULL,2,6),(2,'1111111','um',NULL,NULL,2,6),(3,'2222222','dois',NULL,NULL,2,4),(4,'3333333','tres',NULL,NULL,2,3),(5,'4444444','quatro',NULL,NULL,2,6),(6,'5555555','cinco','cinco@gmail.com','lghRCruxuPjgk',2,3);
+INSERT INTO `Professores` VALUES (1,'1234567','lalala',NULL,NULL,2,6),(2,'1111111','um',NULL,NULL,2,6),(3,'2222222','dois',NULL,NULL,2,4),(4,'3333333','tres',NULL,NULL,2,3),(5,'4444444','quatro',NULL,NULL,2,6),(6,'5555555','cinco','cinco@gmail.com','lghRCruxuPjgk',2,3),(7,'6666666','seis','seis@gmail.com','lgkbXq8Gfb3sE',2,3),(8,'9999999','nove','nove@gmail.com','lguNa8YUjHRKg',2,6),(9,'1010101','dez','dez@gmail.com','lgKeufr2h0XWA',2,5),(10,'7654321','Lulu','lulu@qualquercoisa','lgBKFtYAwZc3M',2,7);
 /*!40000 ALTER TABLE `Professores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,7 +293,7 @@ CREATE TABLE `Turmas` (
 
 LOCK TABLES `Turmas` WRITE;
 /*!40000 ALTER TABLE `Turmas` DISABLE KEYS */;
-INSERT INTO `Turmas` VALUES (2,'Manhã',1,'20191INFIG',40,NULL,NULL),(3,'Tarde',2,'20191LOGIG',40,NULL,NULL),(4,'Tarde',1,'20192INFIG',35,6,3),(5,'Manhã',1,'aaaa',21,5,6);
+INSERT INTO `Turmas` VALUES (2,'Manhã',1,'20191INFIG',40,10,7),(3,'Tarde',2,'20191LOGIG',40,7,3),(4,'Tarde',1,'20192INFIG',35,6,3),(5,'Manhã',1,'aaaa',21,5,6);
 /*!40000 ALTER TABLE `Turmas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,4 +330,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-20  6:17:33
+-- Dump completed on 2019-11-25 22:56:34
