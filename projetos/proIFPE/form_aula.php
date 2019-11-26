@@ -4,7 +4,7 @@ include 'header.php';
 session_start();
 
 $idturma = $_GET['id'];
-$hoje = date("d/m/Y");
+$hoje = date("Y/m/d");
 
 $PDO = dbConnect();
 
@@ -37,7 +37,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		<br>
 		<Label>Descrição da aula:</Label>
 		<!-- <input type="text" name="descricao" placeholder="Ex: Aula 01 - Aprendendo HTML" required> -->
-		<textarea name="descricao" placeholder="Ex: Introdução à cadeira" required rows="5" cols="33"></textarea>
+		<textarea name="descricao" placeholder="Informações sobre à aula" required rows="5" cols="33"></textarea>
 		<br>
 		<input type="submit" value="Adicionar">
 	</fieldset>
