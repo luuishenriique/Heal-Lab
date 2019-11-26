@@ -326,9 +326,9 @@ input[type=button], input[type=submit], input[type=reset] {
   color: white;*/
   padding: 16px 16px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: auto;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
   text-transform: uppercase;
   border-radius: 20px;
   background-color: rgb(10, 85, 23);
