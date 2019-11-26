@@ -10,7 +10,7 @@ $idturma = $_GET['id'];
 
 $PDO = dbConnect();
 
-$sql = "SELECT * FROM Aulas WHERE id_prof = :idprof AND nome_turma = :idturma";
+$sql = "SELECT * FROM Aulas WHERE id_prof = :idprof AND id_turma = :idturma";
 
 $stmt = $PDO->prepare($sql);
 
