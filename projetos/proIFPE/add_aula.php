@@ -2,7 +2,8 @@
 include 'config.php';
 session_start();
 
-// $data = date();
+$idturma = $_GET['id'];
+$data = date("Y/m/d");
 // echo $date;
 // exit();
 
@@ -27,5 +28,5 @@ $stmt->execute();
 // echo $_SESSION['idturma'];
 // echo $_SESSION['iddisc'];
 // echo $_SESSION['user_id'];
-redirect('cad_aula.php');
+redirect('aula_chamada.php?id=' . $idturma);
 ?>
