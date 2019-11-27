@@ -67,6 +67,6 @@ if (count($linhas) <= 0) {
 		<?php endforeach ?>
 	</table>
 	<br>
-	<h3 style="text-align: center;"><a href="form_adm.php">Adicionar novo administrador</a></h3>
-	<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+	<!-- <h3 style="text-align: center;"><a href="form_adm.php">Adicionar novo administrador</a></h3> -->
+	<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
 	<?php include 'footer.php' ?>

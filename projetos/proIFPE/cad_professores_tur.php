@@ -31,6 +31,6 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	</fieldset>
 </form>
 <br>
-<h4 style="text-align: center;"><a href="cad_professores.php">Voltar para professores</a></h4>
+<!-- <h4 style="text-align: center;"><a href="cad_professores.php">Voltar para professores</a></h4> -->
 <br>
 <?php include 'footer.php'; ?>

@@ -59,7 +59,7 @@ if (count($linhas) <= 0) {
 	</tbody>
 </table>
 <br>
-<h3 style="text-align: center;"><a href="form_aula.php?id=<?= $idturma ?>">Adicionar nova aula</a></h3>
-<h3 style="text-align: center;"><a href="alunos_aula.php?id=<?= $idturma ?>">Ver alunos</a></h3>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+<!-- <h3 style="text-align: center;"><a href="form_aula.php?id=<?= $idturma ?>">Adicionar nova aula</a></h3> -->
+<!-- <h3 style="text-align: center;"><a href="alunos_aula.php?id=<?= $idturma ?>">Ver alunos</a></h3> -->
+<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
 <?php include 'footer.php' ?>

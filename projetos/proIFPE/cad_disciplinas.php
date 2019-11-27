@@ -91,6 +91,6 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tbody>
   </table>
   <br>
-  <h3 style="text-align: center;"><a href="form_dis.php">Adicionar nova disciplina</a></h3>
-  <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+  <!-- <h3 style="text-align: center;"><a href="form_dis.php">Adicionar nova disciplina</a></h3> -->
+  <!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
   <?php include 'footer.php' ?>

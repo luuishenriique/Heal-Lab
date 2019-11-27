@@ -52,6 +52,6 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </form>
 <br>
 <br>
-<h4 style="text-align: center;"><a href="cad_turmas.php">Voltar para turmas</a></h4>
+<!-- <h4 style="text-align: center;"><a href="cad_turmas.php">Voltar para turmas</a></h4> -->
 <br>
 <?php include 'footer.php'; ?>

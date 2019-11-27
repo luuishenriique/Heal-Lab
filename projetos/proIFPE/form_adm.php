@@ -7,6 +7,8 @@ session_start();
 <br>
 <h1>Adicionando administrador</h1>
 <br>
+<p style="background-color: yellow; width: 50%; margin: auto;"><strong>ATENÇÃO: Após cadastro, solicitar usuário validar seus dados (email e senha) no primeiro login!</strong></p>
+<br>
 <form class="form_info" action="add_adm.php" method="POST">
 	<fieldset>
 		<legend>Dados de administrador</legend>
@@ -18,8 +20,6 @@ session_start();
 	</fieldset>
 </form>
 <br>
-<p style="background-color: yellow; width: 50%; margin: auto;"><strong>ATENÇÃO: Após cadastro, solicitar usuário validar seus dados (email e senha) no primeiro login!</strong></p>
-<br>
-<h4 style="text-align: center;"><a href="cad_administradores.php">Voltar para administradores</a></h4>
+<!-- <h4 style="text-align: center;"><a href="cad_administradores.php">Voltar para administradores</a></h4> -->
 <br>
 <?php include 'footer.php'; ?>
