@@ -69,7 +69,7 @@ CREATE TABLE `Alunos` (
   CONSTRAINT `FK_Alunos_Cursos` FOREIGN KEY (`id_curso`) REFERENCES `Cursos` (`id_curso`),
   CONSTRAINT `FK_Alunos_Turmas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`),
   CONSTRAINT `FK_Usuarios_Alunos` FOREIGN KEY (`id_user`) REFERENCES `Usuarios` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `Alunos` (
 
 LOCK TABLES `Alunos` WRITE;
 /*!40000 ALTER TABLE `Alunos` DISABLE KEYS */;
-INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL),(7,'LARISSA FERREIRA LOPES','20191INFIG0082','larrisa@gmail.com','lgsTC5NSnyhso',3,1,NULL),(8,'MARIA EDUARDA JANSEM PEREIRA','20191INFIG0112','mariaj@gmail.com','lgz83J9PPQtxg',3,1,NULL),(9,'MARIA MARIA','20191LOG3333',NULL,NULL,3,2,3),(10,'JOSEPH JOESTAR','20191LOGIGM',NULL,NULL,3,2,3),(11,'TIMóTEO CABRAL','20192LOGIG0003',NULL,NULL,3,2,3),(12,'MORGANA FERNANDES','20182INFIG0148','morg@gmail.com','lgcsxqP4p2I1c',3,1,2),(13,'ROBSON GOMES','20182INFIG0377','robson@gmail.com','lgsTC5NSnyhso',3,1,4);
+INSERT INTO `Alunos` VALUES (5,'LUIS HENRIQUE CHAVES DE OLIVEIRA','20191INFIG0201','luis_henrique_co@hotmail.com','lghFqNRvZ/mA2',3,1,NULL),(7,'LARISSA FERREIRA LOPES','20191INFIG0082','larrisa@gmail.com','lgsTC5NSnyhso',3,1,NULL),(8,'MARIA EDUARDA JANSEM PEREIRA','20191INFIG0112','mariaj@gmail.com','lgz83J9PPQtxg',3,1,NULL),(9,'MARIA MARIA','20191LOG3333',NULL,NULL,3,2,3),(10,'JOSEPH JOESTAR','20191LOGIGM',NULL,NULL,3,2,3),(11,'TIMóTEO CABRAL','20192LOGIG0003',NULL,NULL,3,2,3),(12,'MORGANA FERNANDES','20182INFIG0148','morg@gmail.com','lgcsxqP4p2I1c',3,1,2),(13,'ROBSON GOMES','20182INFIG0377','robson@gmail.com','lgsTC5NSnyhso',3,1,4),(14,'BBB','20192INFIG0002','bbb@gmail.com','lgvuSkqFoeQag',3,1,4),(15,'GIORNO GIOVANNA','20191INFIG4444','giorno@gmail.com','lgh6rBG2l.nRo',3,1,4);
 /*!40000 ALTER TABLE `Alunos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `Aulas` (
   KEY `FK_Turmas_Aulas` (`id_turma`),
   CONSTRAINT `FK_Professores_Aulas` FOREIGN KEY (`id_prof`) REFERENCES `Professores` (`id_prof`),
   CONSTRAINT `FK_Turmas_Aulas` FOREIGN KEY (`id_turma`) REFERENCES `Turmas` (`id_turma`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ CREATE TABLE `Aulas` (
 
 LOCK TABLES `Aulas` WRITE;
 /*!40000 ALTER TABLE `Aulas` DISABLE KEYS */;
-INSERT INTO `Aulas` VALUES (1,'2019-11-14','asdasdasd',6,4),(2,NULL,'Aula de usar manconha',9,2),(3,NULL,'dfasfasfaf',9,2),(4,'2019-11-25','aula experimental\r\n',6,4);
+INSERT INTO `Aulas` VALUES (1,'2019-11-14','asdasdasd',6,4),(2,NULL,'Aula de usar manconha',9,2),(3,NULL,'dfasfasfaf',9,2),(4,'2019-11-25','aula experimental\r\n',6,4),(7,'2019-11-26','Aula experimental',6,4),(8,'2019-11-26','teste 2\r\n',6,4),(9,'2019-11-26','teste 3',6,4),(10,'2019-11-26','teste 4',6,4),(11,'2019-11-26','teste 5',6,4),(12,'2019-11-26','teste 6',6,4),(13,'2019-11-27','teste 8',6,4),(14,'2019-11-27','sss',6,4),(15,'2019-11-27','teste 11',6,4);
 /*!40000 ALTER TABLE `Aulas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -125,12 +125,13 @@ CREATE TABLE `Chamadas` (
   `qtd_faltas_chamada` int(11) NOT NULL,
   `id_aula` int(11) NOT NULL,
   `id_aluno` int(11) NOT NULL,
+  `qtd_aulas_chamada` int(11) NOT NULL,
   PRIMARY KEY (`id_chamada`),
   KEY `FK_Aulas_Chamadas` (`id_aula`),
   KEY `FK_Alunos_Chamadas` (`id_aluno`),
   CONSTRAINT `FK_Alunos_Chamadas` FOREIGN KEY (`id_aluno`) REFERENCES `Alunos` (`id_aluno`),
   CONSTRAINT `FK_Aulas_Chamadas` FOREIGN KEY (`id_aula`) REFERENCES `Aulas` (`id_aula`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,6 +140,7 @@ CREATE TABLE `Chamadas` (
 
 LOCK TABLES `Chamadas` WRITE;
 /*!40000 ALTER TABLE `Chamadas` DISABLE KEYS */;
+INSERT INTO `Chamadas` VALUES (1,1,11,13,3),(2,0,11,14,3),(3,0,12,13,4),(4,3,12,14,4),(5,0,12,13,3),(6,0,12,14,3),(7,0,12,13,2),(8,0,12,14,2),(9,1,12,15,2),(10,0,12,13,2),(11,0,12,14,2),(12,1,12,15,2),(13,0,13,13,3),(14,0,13,14,3),(15,1,13,15,3),(16,3,14,13,5),(17,1,14,14,5),(18,0,14,15,5),(19,0,15,13,4),(20,0,15,14,4),(21,0,15,15,4);
 /*!40000 ALTER TABLE `Chamadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +260,7 @@ CREATE TABLE `Professores` (
 
 LOCK TABLES `Professores` WRITE;
 /*!40000 ALTER TABLE `Professores` DISABLE KEYS */;
-INSERT INTO `Professores` VALUES (1,'1234567','lalala',NULL,NULL,2,6),(2,'1111111','um',NULL,NULL,2,6),(3,'2222222','dois',NULL,NULL,2,4),(4,'3333333','tres',NULL,NULL,2,3),(5,'4444444','quatro',NULL,NULL,2,6),(6,'5555555','cinco','cinco@gmail.com','lghRCruxuPjgk',2,3),(7,'6666666','seis','seis@gmail.com','lgkbXq8Gfb3sE',2,3),(8,'9999999','nove','nove@gmail.com','lguNa8YUjHRKg',2,6),(9,'1010101','dez','dez@gmail.com','lgKeufr2h0XWA',2,5),(10,'7654321','Lulu','lulu@qualquercoisa','lgBKFtYAwZc3M',2,7);
+INSERT INTO `Professores` VALUES (1,'1234567','lalala',NULL,NULL,2,6),(2,'1111111','um',NULL,NULL,2,6),(3,'2222222','dois',NULL,NULL,2,4),(4,'3333333','tres',NULL,NULL,2,3),(5,'4444444','quatro',NULL,NULL,2,6),(6,'5555555','cinco modificado','cincomod@gmail.com','lghRCruxuPjgk',2,3),(7,'6666666','seis','seis@gmail.com','lgkbXq8Gfb3sE',2,3),(8,'9999999','nove','nove@gmail.com','lguNa8YUjHRKg',2,6),(9,'1010101','dez','dez@gmail.com','lgKeufr2h0XWA',2,5),(10,'7654321','Lulu','lulu@qualquercoisa','lgBKFtYAwZc3M',2,7);
 /*!40000 ALTER TABLE `Professores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-25 22:56:34
+-- Dump completed on 2019-11-27  6:15:57
