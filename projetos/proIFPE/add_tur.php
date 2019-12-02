@@ -43,5 +43,5 @@ $_SESSION['turma'] = $nome;
 $_SESSION['curso-turma'] = $curso;
 $_SESSION['capacidade-turma'] = $capacidade;
 
-redirect('cad_turmas_aln.php');
+redirect('cad_turmas.php');
 ?>

@@ -50,7 +50,7 @@ foreach ($linhas as $id => $linha) {
 
 }
 
-redirect('cad_aula.php?id=' . $id_turma);
+redirect('my_classes_prof.php');
 
 ?>
 

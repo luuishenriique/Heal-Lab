@@ -4,6 +4,7 @@ session_start();
 
 $idturma = $_GET['id'];
 $data = date("Y/m/d");
+// $date = $_POST['data'];
 // echo $date;
 // exit();
 
@@ -18,7 +19,7 @@ $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':data', $data);
 $stmt->bindParam(':descricao', $descricao);
 $stmt->bindParam(':idprof', $_SESSION['user_id']);
-$stmt->bindParam(':idturma', $_SESSION['idturma']);
+$stmt->bindParam(':idturma', $idturma);
 // $stmt->bindParam(':iddisc', $_SESSION['iddisc']);
 // $stmt->bindParam(':idcurso', $_SESSION['idcurso']);
 
