@@ -18,15 +18,16 @@ $word = $words[$n];
 		<input type="password" name="senha" required>
 		<legend>Confirme a Senha</legend>
 		<input type="password" name="conf_senha" required>
-		<input type="text" hidden name="keyword" value="<?= $word ?>">
+<!-- 		<input type="text" hidden name="keyword" value="<?= $word ?>">
 		<label>Palavra-Chave: <?= $word ?></label>
 		<br>
 		<label></label>
 		<br>
 		<legend>Confirme a palavra-chave:</legend>
-		<input type="text" name="vkeyword" required>
+		<input type="text" name="vkeyword" required> -->
 		<input type="submit" value="Atualizar dados">
 	</fieldset>
 </form>
-<h3><a href="login.php">Voltar para login</a></h3>
+<br>
+<!-- <h3><a href="login.php">Voltar para login</a></h3> -->
 </div>
