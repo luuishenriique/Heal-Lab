@@ -22,7 +22,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <br>
 <h3 style="background-color: yellow; width: 50%; margin: auto;"><strong>ATENÇÃO: Campo de falta vazio representa presença do aluno na aula!</strong></h3>
 <br>
-<form action="add_chamada_aula.php" method="POST">
+<form action="add_aula_chamada.php?id=<?= $idturma ?>" method="POST">
 	<fieldset class="form_info">
 	<legend>Quantidade de aulas</legend>
 	<label>Insira a quantidade: </label><input type="number" name="qtd_aulas" max="5" min="1" value="0">
@@ -41,11 +41,11 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				<tr>
 					<td><?= $linhas[$id]['mat_aluno'] ?></td>
 					<td><?= $linhas[$id]['name_aluno'] ?></td>
-					<td><input type="number" name="qtd_faltas" value="0" min="0" max="5"></td>
+					<td><input type="number" name="qtd_faltas_<?=$linhas[$id]['id_aluno']?>" value="0" min="0" max="5"></td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>
 	</table>
 	<br>
-	<input class="form_info" type="submit" value="Registrar">
+	<input type="submit" value="Registrar">
 </form>
