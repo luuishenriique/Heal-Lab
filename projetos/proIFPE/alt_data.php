@@ -18,12 +18,6 @@ if ($_SESSION['type_id'] == 1) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		// echo 'Achei nada!';
-		exit();
-	}
 }
 
 if ($_SESSION['type_id'] == 2) {
@@ -37,12 +31,6 @@ if ($_SESSION['type_id'] == 2) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		// echo 'Achei nada!';
-		exit();
-	}
 }
 
 if ($_SESSION['type_id'] == 3) {
@@ -56,51 +44,45 @@ if ($_SESSION['type_id'] == 3) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		// echo 'Achei nada!';
-		exit();
-	}
 }
 ?>
 <title>proIFPE::Seus dados</title>
 <br>
 <h1>Suas informações</h1>
 <br>
-<form action="" method="POST">
-<table>
-	<thead>
-		<?php if ($_SESSION['type_id'] == 1): ?>
-			<th>Login</th>
-			<th>Nome completo</th>
-			<th>Email de contato</th>
-			<th>Tipo de usuário</th>
-			<!-- <th>Ações</th> -->
-		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 2): ?>
-			<th>SIAPE</th>
-			<th>Nome completo</th>
-			<th>Email de contato</th>
-			<th>Tipo de usuário</th>
-			<!-- <th>Ações</th> -->
-		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 3): ?>
-			<th>Matrícula</th>
-			<th>Nome completo</th>
-			<th>Email de contato</th>
-			<th>Tipo de usuário</th>
-			<!-- <th>Ações</th> -->
-		<?php endif ?>
-	</thead>
-	<tbody>
-		<?php if ($_SESSION['type_id'] == 1): ?>
-		<?php foreach ($linhas as $id => $linha): ?>
-			<tr>
-				<td><?= $linhas[$id]['login_adm'] ?></td>
-				<td><?= $linhas[$id]['name_adm'] ?></td>
-				<td><?= $linhas[$id]['email_adm'] ?></td>
-				<td><?= 'Administrador' ?></td>
+<form action="add_alt_data.php" method="POST">
+	<table>
+		<thead>
+			<?php if ($_SESSION['type_id'] == 1): ?>
+				<th>Login</th>
+				<th>Nome completo</th>
+				<th>Email de contato</th>
+				<th>Tipo de usuário</th>
+				<!-- <th>Ações</th> -->
+			<?php endif ?>
+			<?php if ($_SESSION['type_id'] == 2): ?>
+				<th>SIAPE</th>
+				<th>Nome completo</th>
+				<th>Email de contato</th>
+				<th>Tipo de usuário</th>
+				<!-- <th>Ações</th> -->
+			<?php endif ?>
+			<?php if ($_SESSION['type_id'] == 3): ?>
+				<th>Matrícula</th>
+				<th>Nome completo</th>
+				<th>Email de contato</th>
+				<th>Tipo de usuário</th>
+				<!-- <th>Ações</th> -->
+			<?php endif ?>
+		</thead>
+		<tbody>
+			<?php if ($_SESSION['type_id'] == 1): ?>
+				<?php foreach ($linhas as $id => $linha): ?>
+					<tr>
+						<td><?= $linhas[$id]['login_adm'] ?></td>
+						<td><?= $linhas[$id]['name_adm'] ?></td>
+						<td><?= $linhas[$id]['email_adm'] ?></td>
+						<td><?= 'Administrador' ?></td>
 				<!-- <td>
 					<nav>
 						<a href="alt_data.php">Modificar dados</a> 
@@ -114,8 +96,8 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Administrador' ?></td>
 			</tr>
 		<?php endforeach ?>	
-		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 2): ?>
+	<?php endif ?>
+	<?php if ($_SESSION['type_id'] == 2): ?>
 		<?php foreach ($linhas as $id => $linha): ?>
 			<tr>
 				<td><?= $linhas[$id]['siape_prof'] ?></td>
@@ -135,8 +117,8 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Professor' ?></td>
 			</tr>
 		<?php endforeach ?>	
-		<?php endif ?>
-		<?php if ($_SESSION['type_id'] == 3): ?>
+	<?php endif ?>
+	<?php if ($_SESSION['type_id'] == 3): ?>
 		<?php foreach ($linhas as $id => $linha): ?>
 			<tr>
 				<td><?= $linhas[$id]['mat_aluno'] ?></td>
@@ -156,12 +138,12 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Aluno' ?></td>
 			</tr>
 		<?php endforeach ?>	
-		<?php endif ?>
-	</tbody>
+	<?php endif ?>
+</tbody>
 </table>
 <br>
 <input type="submit" value="Alterar">
 </form>
 <br>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
 <?php include 'footer.php'; ?>
