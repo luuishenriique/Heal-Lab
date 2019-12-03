@@ -5,8 +5,8 @@ $dados = $_POST['user_data'] ?? false;
 $email = $_POST['email'] ?? false;
 $senha = $_POST['senha'] ?? false;
 $conf_senha = $_POST['conf_senha'] ?? false;
-$keyword = $_POST['keyword'] ?? false;
-$vkeyword = $_POST['vkeyword'] ?? false;
+// $keyword = $_POST['keyword'] ?? false;
+// $vkeyword = $_POST['vkeyword'] ?? false;
 $findINF = "inf";
 $findLOG = "log";
 $checkINF = checkString($findINF, $matricula);
@@ -29,17 +29,17 @@ if ($senha !== $conf_senha) {
 } else {
 	$bau_senha = $senha;
 	$senha = cryptPass($senha);
-	echo $senha;
+	// echo $senha;
 }
 
-if ($vkeyword !== $keyword) {
-	redirect('att_nuser.php?msg=Palavra-chave incorreta!');
-	exit();
-}
+// if ($vkeyword !== $keyword) {
+// 	redirect('att_nuser.php?msg=Palavra-chave incorreta!');
+// 	exit();
+// }
 
 if (strlen($dados) < 7) {
 
-	echo 'ADMNISTRADOR';	
+	// echo 'ADMNISTRADOR';	
 
 	$PDO = dbConnect();
 
@@ -52,11 +52,11 @@ if (strlen($dados) < 7) {
 	$stmt->execute();
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	var_dump($linhas);
+	// var_dump($linhas);
 
 	if (count($linhas) <= 0) {
 		redirect('auth_nuser.php');
-		echo 'Achei nada!';
+		// echo 'Achei nada!';
 		exit();
 	}
 
@@ -73,13 +73,13 @@ if (strlen($dados) < 7) {
 	$stmt->execute();
 
 	redirect('login.php');
-	echo 'Consegui!';
+	// echo 'Consegui!';
 
 }
 
 if (strlen($dados) == 7) {
 
-	echo 'SIAPE';	
+	// echo 'SIAPE';	
 
 	$PDO = dbConnect();
 
@@ -92,11 +92,11 @@ if (strlen($dados) == 7) {
 	$stmt->execute();
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	var_dump($linhas);
+	// var_dump($linhas);
 
 	if (count($linhas) <= 0) {
 		redirect('auth_nuser.php');
-		echo 'Achei nada!';
+		// echo 'Achei nada!';
 		exit();
 	}
 
@@ -113,13 +113,13 @@ if (strlen($dados) == 7) {
 	$stmt->execute();
 
 	redirect('login.php');
-	echo 'Consegui!';
+	// echo 'Consegui!';
 
 }
 
 if (strlen($dados) > 7) {
 
-	echo 'MATRÍCULA';	
+	// echo 'MATRÍCULA';	
 	$dados = strtoupper($dados);
 
 	$PDO = dbConnect();
@@ -133,11 +133,11 @@ if (strlen($dados) > 7) {
 	$stmt->execute();
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	var_dump($linhas);
+	// var_dump($linhas);
 
 	if (count($linhas) <= 0) {
 		redirect('auth_nuser.php');
-		echo 'Achei nada!';
+		// echo 'Achei nada!';
 		exit();
 	}
 
@@ -154,7 +154,7 @@ if (strlen($dados) > 7) {
 	$stmt->execute();
 
 	redirect('login.php');
-	echo 'Consegui!';
+	// echo 'Consegui!';
 	exit();
 
 }
