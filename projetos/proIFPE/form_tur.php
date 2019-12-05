@@ -24,6 +24,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <title>proIFPE::Adicionando turma</title>
 <br>
 <h1>Adicionando turma</h1>
+<h3><a href="cad_turmas.php">Ver Turmas</a></h3>
 <br>
 <form class="form_info" action="add_tur.php" method="POST">
 	<fieldset>

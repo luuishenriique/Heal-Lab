@@ -17,6 +17,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <title>proIFPE::Adicionando professor</title>
 <br>
 <h1>Adicionando professor</h1>
+<h3><a href="cad_professores.php">Ver Professores</a></h3>
 <br>
 <p style="background-color: yellow; width: 50%; margin: auto;"><strong>ATENÇÃO: Após cadastro, solicitar usuário validar seus dados (email e senha) no primeiro login!</strong></p>
 <br>

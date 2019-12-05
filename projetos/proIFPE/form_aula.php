@@ -27,6 +27,7 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <title>proIFPE::Adicionando Aula</title>
 <br>
 <h1>Adicionando aula</h1>
+<h3><a href="cad_aulas?id=<?= $idturma ?>.php">Ver Aulas</a></h3>
 <br>
 <form class="form_info" action="add_aula.php?id=<?= $idturma ?>" method="POST">
 	<fieldset>
