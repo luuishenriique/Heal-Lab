@@ -18,12 +18,6 @@ if ($_SESSION['type_id'] == 1) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		echo 'Achei nada!';
-		exit();
-	}
 }
 
 if ($_SESSION['type_id'] == 2) {
@@ -37,12 +31,6 @@ if ($_SESSION['type_id'] == 2) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		echo 'Achei nada!';
-		exit();
-	}
 }
 
 if ($_SESSION['type_id'] == 3) {
@@ -56,12 +44,6 @@ if ($_SESSION['type_id'] == 3) {
 
 	$linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	// var_dump($linhas);
-
-	if (count($linhas) <= 0) {
-		redirect('my_data.php');
-		echo 'Achei nada!';
-		exit();
-	}
 }
 ?>
 <title>proIFPE::Seus dados</title>
@@ -102,7 +84,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Administrador' ?></td>
 				<td>
 					<nav>
-						<a href="alt_data.php">Modificar dados</a> 
+						<a href="alt_data.php"><i class="fas fa-user-edit"></i></a> 
 					</nav>
 				</td>
 			</tr>
@@ -117,7 +99,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Professor' ?></td>
 				<td>
 					<nav>
-						<a href="alt_data.php">Modificar dados</a> 
+						<a href="alt_data.php"><i class="fas fa-user-edit"></i></a> 
 					</nav>
 				</td>
 			</tr>
@@ -132,7 +114,7 @@ if ($_SESSION['type_id'] == 3) {
 				<td><?= 'Aluno' ?></td>
 				<td>
 					<nav>
-					<a href="alt_data.php">Modificar dados</a> 
+					<a href="alt_data.php"><i class="fas fa-user-edit"></i></a> 
 					</nav>
 				</td>
 			</tr>
@@ -141,5 +123,5 @@ if ($_SESSION['type_id'] == 3) {
 	</tbody>
 </table>
 <br>
-<h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4>
+<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->   
 <?php include 'footer.php'; ?>

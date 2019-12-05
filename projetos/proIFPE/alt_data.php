@@ -90,9 +90,9 @@ if ($_SESSION['type_id'] == 3) {
 				</td> -->
 			</tr>
 			<tr>
-				<td><input type="text" name="login" placeholder="Novo login"></td>
-				<td><input type="text" name="nome" placeholder="Novo nome"></td>
-				<td><input type="text" name="email" placeholder="Novo email"></td>
+				<td><input required type="text" name="login" placeholder="Novo login"></td>
+				<td><input required type="text" name="nome" placeholder="Novo nome"></td>
+				<td><input required type="text" name="email" placeholder="Novo email"></td>
 				<td><?= 'Administrador' ?></td>
 			</tr>
 		<?php endforeach ?>	
@@ -112,8 +112,8 @@ if ($_SESSION['type_id'] == 3) {
 			</tr>
 			<tr>
 				<td><?= 'Não alterado' ?></td>
-				<td><input type="text" name="nome" placeholder="Novo nome"></td>
-				<td><input type="text" name="email" placeholder="Novo email"></td>
+				<td><input required type="text" name="nome" placeholder="Novo nome"></td>
+				<td><input required type="text" name="email" placeholder="Novo email"></td>
 				<td><?= 'Professor' ?></td>
 			</tr>
 		<?php endforeach ?>	
@@ -133,8 +133,8 @@ if ($_SESSION['type_id'] == 3) {
 			</tr>
 			<tr>
 				<td><?= 'Não alterado' ?></td>
-				<td><input type="text" name="nome" placeholder="Novo nome"></td>
-				<td><input type="text" name="email" placeholder="Novo email"></td>
+				<td><input required type="text" name="nome" placeholder="Novo nome"></td>
+				<td><input required type="text" name="email" placeholder="Novo email"></td>
 				<td><?= 'Aluno' ?></td>
 			</tr>
 		<?php endforeach ?>	
