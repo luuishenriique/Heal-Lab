@@ -58,9 +58,9 @@ if (count($linhas) <= 0) {
 				<?php endif ?>
 				<td><?= $linhas[$id]['id_user'] ?></td>
 				<td>
-					<nav>
-						<a href="">&#133;</a> |
-						<a href="">&times;</a>
+					<nav style="font-size: 18px;">
+						<a href="mod_adm_data.php?id=<?=$linhas[$id]['id_adm']?>"><i class="fas fa-pen-square"></i></a> |
+						<a href="del_adm_data.php?id=<?=$linhas[$id]['id_adm']?>"><i class="fas fa-trash"></i></a>
 					</nav>
 				</td>
 			</tr>

@@ -53,7 +53,7 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			<th>SIAPE</th>
 			<th>Nome do professor</th>
 			<th>Email de contato</th>
-			<th>Disciplina</th>
+			<!-- <th>Disciplina</th> -->
 			<th>Ações</th>
 		</tr>
 	</thead>
@@ -73,25 +73,25 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 						<?= $linhas[$id]['email_prof'] ?>
 					</td>
 				<?php endif ?>
-					<?php if (is_null($linhas[$id]['id_disc'])): ?>
-						<td style="background-color: yellow; width: 50%; margin: auto;">
-							<?= "Sem disciplina" ?>
+<!-- 				<?php if (is_null($linhas[$id]['id_disc'])): ?>
+					<td style="background-color: yellow; width: 50%; margin: auto;">
+						<?= "Sem disciplina" ?>
+					</td>
+					<?php else: ?>
+						<td>
+							<?= $linhas2[$id]['name_disc'] ?>
 						</td>
-						<?php else: ?>
-							<td>
-								<?= $linhas2[$id]['name_disc'] ?>
-							</td>
-					<?php endif ?>
-				<td>
-					<nav>
-						<a href="">&#133;</a> |
-						<a href="">&times;</a>
-					</nav>
-				</td>
-			</tr>
-		<?php endforeach ?>
-	</table>
-	<br>
-	<!-- <h3 style="text-align: center;"><a href="form_prof.php">Adicionar novo professor</a></h3> -->
-	<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
-	<?php include 'footer.php' ?>
+					<?php endif ?> -->
+					<td>
+						<nav style="font-size: 18px;">
+							<a href="mod_prof_data.php?id=<?=$linhas[$id]['id_prof']?>"><i class="fas fa-pen-square"></i></a> | 
+							<a href="del_prof_data.php?id=<?=$linhas[$id]['id_prof']?>"><i class="fas fa-trash"></a>
+						</nav>
+					</td>
+				</tr>
+			<?php endforeach ?>
+		</table>
+		<br>
+		<!-- <h3 style="text-align: center;"><a href="form_prof.php">Adicionar novo professor</a></h3> -->
+		<!-- <h4 style="text-align: center;"><a href="home.php">Voltar para home</a></h4> -->
+		<?php include 'footer.php' ?>

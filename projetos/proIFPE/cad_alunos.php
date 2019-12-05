@@ -67,11 +67,11 @@ $linhas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 						</td>
 					<?php endif ?>
 					<td>
-						<nav>
-							<a href="">&#133;</a> |
-							<a href="">&times;</a>
-						</nav>
-					</td>
+					<nav style="font-size: 18px;">
+						<a href="mod_aln_data.php?id=<?=$linhas[$id]['id_aluno']?>"><i class="fas fa-pen-square"></i></a> |
+						<a href="del_aln_data.php?id=<?=$linhas[$id]['id_aluno']?>"><i class="fas fa-trash"></i></a>
+					</nav>
+				</td>
 				</tr>
 			<?php endforeach ?>
 		</tbody>

@@ -56,7 +56,7 @@ if (count($linhas) <= 0) {
 			<th>Curso</th>
 			<th>Capacidade de alunos</th>
 			<th>Turno</th>
-			<!-- <th>Ações</th> -->
+			<th>Ações</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -73,6 +73,12 @@ if (count($linhas) <= 0) {
 				</td>
 				<td><?= $linhas[$id]['capacidade_turma'] ?></td>
 				<td><?= $linhas[$id]['turno_turma'] ?></td>
+				<td>
+					<nav style="font-size: 18px;">
+						<a href="mod_tur.php?id=<?= $linhas[$id]['id_turma']?>"><i class="fas fa-pen-square"></i></a> |
+						<a href="del_tur.php?id=<?= $linhas[$id]['id_turma']?>"><i class="fas fa-trash"></i></a>
+					</nav>
+				</td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>

@@ -81,9 +81,9 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $linhas2[$id]['name_prof'] ?></td>
           <?php endif ?>
           <td>
-            <nav>
-              <a href="">&#133;</a> |
-              <a href="">&times;</a>
+            <nav style="font-size: 18px;">
+              <a href="mod_dis_data.php"><i class="fas fa-pen-square"></i></a> |
+              <a href="del_dis_data.php"><i class="fas fa-trash"></i></a>
             </nav>
           </td>
         </tr>
