@@ -41,6 +41,7 @@ if (strlen($dados) < 7) {
 	$_SESSION['user_data'] = $dado['login_adm'];
 	$_SESSION['user_name'] = $dado['name_adm'];
 	$_SESSION['type_id'] = $dado['id_user'];
+	$_SESSION['email_id'] = $dado['email_adm'];
 	$tipo = $_SESSION['type_id'];
 
 	redirect('home.php');
@@ -80,6 +81,7 @@ if (strlen($dados) == 7) {
 	$_SESSION['user_name'] = $dado['name_prof'];
 	$_SESSION['type_id'] = $dado['id_user'];
 	$_SESSION['iddisc'] = $dado['id_disc'];
+	$_SESSION['email_id'] = $dado['email_prof'];
 	$tipo = $_SESSION['type_id'];
 
 	redirect('home.php');
@@ -118,6 +120,7 @@ if (strlen($dados) > 7) {
 	$_SESSION['user_data'] = $dado['mat_aluno'];
 	$_SESSION['user_name'] = $dado['name_aluno'];
 	$_SESSION['type_id'] = $dado['id_user'];
+	$_SESSION['email_id'] = $dado['email_aluno'];
 	$tipo = $_SESSION['type_id'];
 
 	redirect('home.php');
