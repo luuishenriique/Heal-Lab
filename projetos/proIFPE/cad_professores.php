@@ -85,7 +85,7 @@ $linhas2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 					<td>
 						<nav style="font-size: 18px;">
 							<a href="mod_prof_data.php?id=<?=$linhas[$id]['id_prof']?>"><i class="fas fa-pen-square"></i></a> | 
-							<a href="del_prof_data.php?id=<?=$linhas[$id]['id_prof']?>"><i class="fas fa-trash"></a>
+							<a href="del_prof_data.php?id=<?=$linhas[$id]['id_prof']?>"><i class="fas fa-trash"></i></a>
 						</nav>
 					</td>
 				</tr>
